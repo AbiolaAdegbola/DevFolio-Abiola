@@ -248,8 +248,8 @@ a:focus {
     margin-bottom: 45px;
     padding: 120px 0 0 0;
     overflow: hidden;
-    background: linear-gradient(rgba(239, 35, 60, .95), rgba(239, 35, 60, .95)), url(../img/hero-bg.jpg);
-    background-position: center;
+    background: linear-gradient(rgba(239, 35, 60, .35), rgba(239, 35, 60, .95)), url(../img/hero-bg.jpg);
+    /* background-position: center; */
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -271,7 +271,7 @@ a:focus {
 
 .hero .hero-content {
     position: relative;
-    padding-left: 75px;
+    padding: 55px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -317,6 +317,7 @@ a:focus {
     color: #EF233C;
     background: #ffffff;
     box-shadow: inset 0 0 0 50px #ffffff;
+    border-radius: 10px;
 }
 
 .hero .hero-btn .btn:hover {
@@ -336,7 +337,7 @@ a:focus {
     }
     
     .hero .hero-content {
-        padding: 0 15px;
+        padding: 35px;
     }
     
     .hero .hero-text p {
@@ -748,30 +749,30 @@ a:focus {
 
 .service .service-icon {
     position: relative;
-    width: 150px;
+    width: 100px;
     min-height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #EF233C;
+    /* border: 1px solid #EF233C; */
     background: #ffffff;
 }
 
 .service .service-icon i {
     position: relative;
-    font-size: 60px;
+    font-size: 30px;
     color: #EF233C;
     transition: .3s;
 }
-
+/* 
 .service .service-item:hover i {
     font-size: 75px;
-}
+} */
 
 .service .service-text {
     position: relative;
-    width: calc(100% - 120px);
-    padding: 0 30px;
+    /* width: calc(100% - 120px); */
+    padding: 0 10px;
 }
 
 .service .service-text h3 {
