@@ -1031,7 +1031,7 @@ a:focus {
     font-size: 18px;
     font-weight: 400;
     margin-top: 9px;
-    margin-left: -12px;
+    /* margin-left: -12px; */
 }
 
 .price .price-prices h2 span {
@@ -1055,7 +1055,7 @@ a:focus {
 }
 
 .price .price-description ul li {
-    padding: 0 0 20px 0;
+    padding: 0 0 8px 0;
 }
 
 .price .price-item .price-action {
