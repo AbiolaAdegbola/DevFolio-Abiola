@@ -875,7 +875,7 @@ a:focus {
 
 .portfolio .portfolio-text {
     position: relative;
-    height: 60px;
+    min-height: 60px;
     width: calc(100% - 30px);
     margin: -30px 15px 30px 15px;
     display: flex;
@@ -887,10 +887,10 @@ a:focus {
 .portfolio .portfolio-text h3 {
     width: calc(100% - 70px);
     font-size: 18px;
-    font-weight: 600;
+    /* font-weight: 600; */
     margin: 0 0 0 15px;
-    white-space: nowrap;
-    overflow: hidden;
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
 }
 
 .portfolio .portfolio-text a.btn {
