@@ -1006,7 +1006,7 @@ a:focus {
 }
 
 .price .price-header {
-    padding: 45px 0 30px 0;
+    padding: 25px 0 10px 0;
     color: #414141;
 }
 
@@ -1303,7 +1303,7 @@ a:focus {
 /*******************************/
 /********* Contact CSS *********/
 /*******************************/
-.contact {
+/* .contact {
     position: relative;
     width: 100%;
     margin: 45px 0;
@@ -1318,7 +1318,7 @@ a:focus {
 .contact .contact-form {
     position: relative;
     padding: 90px 0 90px 45px;
-    background: #EF233C;
+    background: #fff;
 }
 
 .contact .contact-form input {
@@ -1381,7 +1381,7 @@ a:focus {
     .contact .contact-form {
         padding: 90px 0;
     }
-}
+} */
 
 
 /*******************************/
