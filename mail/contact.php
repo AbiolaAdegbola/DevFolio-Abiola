@@ -11,7 +11,7 @@ $message = strip_tags(htmlspecialchars($_POST['message']));
 
 $to = "abiole68@gmail.com"; // Change this email to your //
 $subject = "$m_subject:  $name";
-$body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\n\nEmail: $email\n\nSubject: $m_subject\n\nMessage: $message";
+$body = "Vous avez reçu un nouveau message de votre formulaire de contact sur votre DevFolio. Voici les détails :\n\Nom: $name\n\n\nE-mail: $email\n\Sujet: $m_subject\n\nMessage: $message";
 $header = "From: $email";
 $header .= "Reply-To: $email";	
 
