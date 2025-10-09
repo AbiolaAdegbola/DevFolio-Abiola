@@ -6,7 +6,7 @@ Voici un modèle de **README.md** pour ton portfolio GitHub, professionnel et op
 **🚀 Bienvenue sur mon portfolio !**  
 Développeur Full Stack passionné par la création d'applications web et mobiles **performantes**, **scalables** et **centrées sur l'utilisateur**.  
 
-🔗 **Lien vers le portfolio en ligne :** [https://tonportfolio.com](https://tonportfolio.com)  
+🔗 **Lien vers le portfolio en ligne :** [https://dev-folio-abiola.vercel.app/](https://dev-folio-abiola.vercel.app/)  
 
 ---
 
@@ -56,7 +56,7 @@ Développeur Full Stack passionné par la création d'applications web et mobile
 
 1. **Cloner le dépôt**  
 ```bash
-git clone https://github.com/tonusername/ton-portfolio.git
+git clone https://github.com/AbiolaAdegbola/DevFolio-Abiola.git
 cd ton-portfolio
 ```
 
