@@ -488,29 +488,77 @@ window.addEventListener('load', () => {
   });
 })();
 
+/* ── EmailJS Config ──────────────────────────────────────────
+   Pour configurer l'envoi d'emails :
+   1. Créez un compte gratuit sur https://www.emailjs.com
+   2. Ajoutez un "Email Service" → connectez votre Gmail
+   3. Créez un "Email Template" avec les variables :
+        {{from_name}}, {{from_email}}, {{subject}}, {{message}}
+   4. Remplacez les 3 valeurs ci-dessous par vos vraies clés
+──────────────────────────────────────────────────────────── */
+const EMAILJS_PUBLIC_KEY  = 'VOTRE_PUBLIC_KEY';   // Account > API Keys
+const EMAILJS_SERVICE_ID  = 'VOTRE_SERVICE_ID';   // Email Services > Service ID
+const EMAILJS_TEMPLATE_ID = 'VOTRE_TEMPLATE_ID';  // Email Templates > Template ID
+
 /* ── Contact Form ── */
 (function initContactForm() {
-  const form = document.getElementById('contactForm');
-  const msg  = document.getElementById('formMsg');
+  const form      = document.getElementById('contactForm');
+  const msgEl     = document.getElementById('formMsg');
   if (!form) return;
+
+  // Init EmailJS once SDK is loaded
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+  }
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
+
     const submitBtn = form.querySelector('[type="submit"]');
+    const name      = form.querySelector('#cName')?.value.trim();
+    const email     = form.querySelector('#cEmail')?.value.trim();
+    const subject   = form.querySelector('#cSubject')?.value.trim();
+    const message   = form.querySelector('#cMessage')?.value.trim();
+
+    // Client-side validation
+    if (!name || !email || !subject || !message) {
+      showMsg('Veuillez remplir tous les champs.', 'error');
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showMsg('Adresse email invalide.', 'error');
+      return;
+    }
+
     submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours…';
+
+    // Check if EmailJS keys are configured
+    if (EMAILJS_PUBLIC_KEY === 'VOTRE_PUBLIC_KEY') {
+      // Keys not yet configured — show setup warning in dev
+      console.warn('[DevFolio] EmailJS non configuré. Suivez les instructions dans js/main.js');
+      setTimeout(() => {
+        showMsg('⚙️ EmailJS non configuré. Contactez-moi via WhatsApp pour l\'instant.', 'error');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Envoyer le message <i class="fas fa-paper-plane"></i>';
+      }, 600);
+      return;
+    }
 
     try {
-      const data = new FormData(form);
-      const res  = await fetch(form.action, { method: 'POST', body: data });
-      if (res.ok) {
-        showMsg('Message envoyé avec succès ! Je vous répondrai bientôt.', 'success');
-        form.reset();
-      } else {
-        showMsg('Une erreur est survenue. Veuillez réessayer.', 'error');
-      }
-    } catch {
-      showMsg('Impossible d\'envoyer le message. Contactez-moi via WhatsApp.', 'error');
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        from_name:  name,
+        from_email: email,
+        subject:    subject,
+        message:    message,
+        reply_to:   email,
+        to_email:   'abiole68@gmail.com',
+      });
+      showMsg('✅ Message envoyé ! Je vous répondrai très bientôt.', 'success');
+      form.reset();
+    } catch (err) {
+      console.error('[EmailJS]', err);
+      showMsg('❌ Échec de l\'envoi. Réessayez ou contactez-moi via WhatsApp.', 'error');
     } finally {
       submitBtn.disabled = false;
       submitBtn.innerHTML = 'Envoyer le message <i class="fas fa-paper-plane"></i>';
@@ -518,10 +566,10 @@ window.addEventListener('load', () => {
   });
 
   function showMsg(text, type) {
-    if (!msg) return;
-    msg.textContent = text;
-    msg.className   = `form-msg ${type}`;
-    msg.classList.remove('hidden');
-    setTimeout(() => msg.classList.add('hidden'), 6000);
+    if (!msgEl) return;
+    msgEl.textContent = text;
+    msgEl.className   = `form-msg ${type}`;
+    msgEl.classList.remove('hidden');
+    setTimeout(() => msgEl.classList.add('hidden'), 7000);
   }
 })();
