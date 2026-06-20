@@ -5,6 +5,64 @@
    Vanilla JS, no dependencies (except Typed.js)
 ═══════════════════════════════════════════ */
 
+/* ── Project Data ── */
+const PROJECTS = {
+  monitoring: {
+    title:    'Pompe Solaire — Monitoring IoT',
+    category: 'Industriel / IoT',
+    desc:     'Système de surveillance en temps réel pour pompes solaires agricoles. Capteurs de tension, courant et débit reliés à un Arduino qui envoie les données via MQTT. Tableau de bord web avec alertes SMS automatiques en cas d\'anomalie ou de panne détectée.',
+    tags:     ['Arduino', 'Node.js', 'MQTT', 'React', 'MongoDB', 'SMS API'],
+    images:   ['img/monitoring1.png', 'img/monitoring2.png'],
+    live:     null,
+    github:   null,
+  },
+  ivoirebooking: {
+    title:    'IvoireBooking — Réservation Événementielle',
+    category: 'Web App',
+    desc:     'Plateforme en ligne de réservation de salles événementielles en Côte d\'Ivoire. Gestion des disponibilités en temps réel, paiement en ligne sécurisé (Stripe + Mobile Money), notifications email/SMS et espace propriétaire de salle.',
+    tags:     ['React', 'Node.js', 'Firebase', 'Stripe', 'Tailwind CSS'],
+    images:   ['img/portfolio-2.jpg'],
+    live:     null,
+    github:   null,
+  },
+  erp: {
+    title:    'Système ERP — Gestion de Département',
+    category: 'Web App',
+    desc:     'Application ERP complète couvrant la gestion RH, des stocks, de la comptabilité simplifiée et du suivi de projets. Rapports analytiques exportables, tableau de bord interactif et gestion multi-utilisateurs avec rôles.',
+    tags:     ['React', 'Node.js', 'MySQL', 'Express', 'Chart.js'],
+    images:   ['img/erp1.png', 'img/erp2.png', 'img/erp3.png'],
+    live:     null,
+    github:   null,
+  },
+  agrimarket: {
+    title:    'AgriMarket — E-commerce Agricole',
+    category: 'Mobile App',
+    desc:     'Application mobile e-commerce dédiée aux produits agricoles ivoiriens. Géolocalisation des vendeurs, paiement via Orange Money et MTN MoMo, système de notation des vendeurs et suivi des commandes en temps réel.',
+    tags:     ['Flutter', 'Dart', 'Firebase', 'Node.js', 'Google Maps API'],
+    images:   ['img/portfolio-4.jpg'],
+    live:     null,
+    github:   null,
+  },
+  deadline: {
+    title:    'DeadlineTracker — Suivi de Projets',
+    category: 'Web App',
+    desc:     'Application de gestion de tâches et suivi de délais avec vue Kanban, calendrier interactif et notifications automatiques avant chaque échéance. Rapports de performance par projet et par membre d\'équipe.',
+    tags:     ['React', 'Node.js', 'MongoDB', 'Socket.io', 'Nodemailer'],
+    images:   ['img/suiviEcheance1.png', 'img/suiviEcheance2.png'],
+    live:     null,
+    github:   null,
+  },
+  automission: {
+    title:    'AutoMission — Génération de Lettres',
+    category: 'Automatisation',
+    desc:     'Système automatisé de génération de lettres de mission officielles avec signature électronique intégrée. Archivage cloud sécurisé, export PDF, workflow de validation hiérarchique et historique complet des documents.',
+    tags:     ['Python', 'React', 'PDF-lib', 'Node.js', 'AWS S3'],
+    images:   ['img/lettreMission1.jpg', 'img/lettreMission2.png'],
+    live:     null,
+    github:   null,
+  },
+};
+
 /* ── Preloader ── */
 window.addEventListener('load', () => {
   const preloader = document.getElementById('preloader');
@@ -256,6 +314,177 @@ window.addEventListener('load', () => {
 
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
+/* ── Portfolio Modal ── */
+(function initProjectModal() {
+  const overlay  = document.getElementById('projectModal');
+  const closeBtn = document.getElementById('pmClose');
+  const imgEl    = document.getElementById('pmCurrentImg');
+  const prevBtn  = document.getElementById('pmPrev');
+  const nextBtn  = document.getElementById('pmNext');
+  const counter  = document.getElementById('pmCounter');
+  const thumbs   = document.getElementById('pmThumbs');
+  const catEl    = document.getElementById('pmCat');
+  const titleEl  = document.getElementById('pmTitle');
+  const descEl   = document.getElementById('pmDesc');
+  const tagsEl   = document.getElementById('pmTags');
+  const actionsEl= document.getElementById('pmActions');
+
+  if (!overlay) return;
+
+  let currentImages = [];
+  let currentIndex  = 0;
+
+  function setImage(index) {
+    currentIndex = index;
+    imgEl.src    = currentImages[index];
+    imgEl.alt    = titleEl.textContent;
+    counter.textContent = `${index + 1} / ${currentImages.length}`;
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === currentImages.length - 1;
+    // Update active thumbnail
+    thumbs.querySelectorAll('.pm-thumb').forEach((t, i) => {
+      t.classList.toggle('active', i === index);
+    });
+  }
+
+  function openModal(projectId) {
+    const data = PROJECTS[projectId];
+    if (!data) return;
+
+    currentImages = data.images;
+    currentIndex  = 0;
+
+    // Populate info
+    catEl.textContent   = data.category;
+    titleEl.textContent = data.title;
+    descEl.textContent  = data.desc;
+
+    tagsEl.innerHTML = data.tags.map(t => `<span>${t}</span>`).join('');
+
+    actionsEl.innerHTML = '';
+    if (data.live) {
+      actionsEl.innerHTML += `<a href="${data.live}" target="_blank" class="btn btn-primary btn-sm">
+        <i class="fas fa-external-link-alt"></i> Voir le projet</a>`;
+    }
+    if (data.github) {
+      actionsEl.innerHTML += `<a href="${data.github}" target="_blank" class="btn btn-ghost btn-sm">
+        <i class="fab fa-github"></i> Code source</a>`;
+    }
+    if (!data.live && !data.github) {
+      actionsEl.innerHTML = `<span style="font-size:0.82rem;color:var(--text-dim)">
+        <i class="fas fa-lock"></i> Projet confidentiel</span>`;
+    }
+
+    // Build thumbnails
+    thumbs.innerHTML = currentImages.map((src, i) =>
+      `<div class="pm-thumb${i === 0 ? ' active' : ''}" data-index="${i}">
+        <img src="${src}" alt="Vue ${i+1}">
+      </div>`
+    ).join('');
+
+    thumbs.querySelectorAll('.pm-thumb').forEach(thumb => {
+      thumb.addEventListener('click', () => setImage(+thumb.dataset.index));
+    });
+
+    prevBtn.style.display = currentImages.length > 1 ? '' : 'none';
+    nextBtn.style.display = currentImages.length > 1 ? '' : 'none';
+    counter.style.display = currentImages.length > 1 ? '' : 'none';
+
+    setImage(0);
+
+    overlay.hidden = false;
+    requestAnimationFrame(() => overlay.classList.add('active'));
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    overlay.classList.remove('active');
+    overlay.addEventListener('transitionend', () => {
+      overlay.hidden = true;
+      document.body.style.overflow = '';
+    }, { once: true });
+  }
+
+  // Open on card click / button click
+  document.querySelectorAll('.p-item').forEach(item => {
+    const card = item.querySelector('.p-card');
+    const btn  = item.querySelector('.open-project-modal');
+    const projectId = item.dataset.project;
+
+    // Click on card opens modal
+    card?.addEventListener('click', () => openModal(projectId));
+    card?.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(projectId); }
+    });
+    // Stop propagation on overlay button (same action)
+    btn?.addEventListener('click', e => { e.stopPropagation(); openModal(projectId); });
+  });
+
+  closeBtn?.addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+
+  prevBtn?.addEventListener('click', () => { if (currentIndex > 0) setImage(currentIndex - 1); });
+  nextBtn?.addEventListener('click', () => { if (currentIndex < currentImages.length - 1) setImage(currentIndex + 1); });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    if (overlay.hidden) return;
+    if (e.key === 'Escape')      closeModal();
+    if (e.key === 'ArrowLeft')   prevBtn?.click();
+    if (e.key === 'ArrowRight')  nextBtn?.click();
+  });
+
+  // Touch swipe
+  let touchStartX = 0;
+  overlay.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  overlay.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) diff > 0 ? nextBtn?.click() : prevBtn?.click();
+  });
+})();
+
+/* ── Video Modal ── */
+(function initVideoModal() {
+  const overlay  = document.getElementById('videoModal');
+  const closeBtn = document.getElementById('vmClose');
+  const frame    = document.getElementById('vmFrame');
+  const titleEl  = document.getElementById('vmTitle');
+
+  if (!overlay) return;
+
+  function openVideo(videoId, title) {
+    titleEl.textContent = title || '';
+    frame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    overlay.hidden = false;
+    requestAnimationFrame(() => overlay.classList.add('active'));
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeVideo() {
+    overlay.classList.remove('active');
+    frame.src = '';
+    overlay.addEventListener('transitionend', () => {
+      overlay.hidden = true;
+      document.body.style.overflow = '';
+    }, { once: true });
+  }
+
+  document.querySelectorAll('.video-card').forEach(card => {
+    card.addEventListener('click', () => {
+      openVideo(card.dataset.videoId, card.dataset.videoTitle);
+    });
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openVideo(card.dataset.videoId, card.dataset.videoTitle); }
+    });
+  });
+
+  closeBtn?.addEventListener('click', closeVideo);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeVideo(); });
+  document.addEventListener('keydown', e => {
+    if (!overlay.hidden && e.key === 'Escape') closeVideo();
   });
 })();
 
