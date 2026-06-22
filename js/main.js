@@ -36,7 +36,7 @@ const PROJECTS = {
     live: null,
     github: null,
   },
-  ivoirebooking: {
+  ivoirebooking: { 
     title: 'IvoireBooking — Réservation Événementielle',
     category: 'Web App',
     desc: 'Plateforme en ligne de réservation de salles événementielles en Côte d\'Ivoire. Gestion des disponibilités en temps réel, paiement en ligne sécurisé (Stripe + Mobile Money), notifications email/SMS et espace propriétaire de salle.',
