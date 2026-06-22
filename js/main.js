@@ -23,7 +23,7 @@ const PROJECTS = {
     'Docker',
     'Git'
   ],
-  images: ['img/adminstystem2.png', 'img/adminstystem3.png', 'img/adminstystem4.png'],
+  images: ['img/adminstystem.png','img/adminstystem2.png', 'img/adminstystem3.png', 'img/adminstystem4.png'],
   live: null,
   github: null,
 },
