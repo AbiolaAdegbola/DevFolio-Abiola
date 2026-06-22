@@ -92,6 +92,50 @@ const PROJECTS = {
   },
 };
 
+/* ── Theme Toggle ── */
+(function initTheme() {
+  const html    = document.documentElement;
+  const btn     = document.getElementById('themeToggle');
+  const icon    = document.getElementById('themeIcon');
+  const LIGHT   = 'light';
+  const DARK    = 'dark';
+  const KEY     = 'devfolio-theme';
+
+  // Appliquer le thème sans transition (au chargement)
+  function applyTheme(theme, animate) {
+    if (animate) {
+      html.style.transition = 'none'; // déjà géré par CSS sur body
+    }
+    if (theme === LIGHT) {
+      html.setAttribute('data-theme', LIGHT);
+      if (icon) { icon.className = 'fas fa-sun'; }
+    } else {
+      html.removeAttribute('data-theme');
+      if (icon) { icon.className = 'fas fa-moon'; }
+    }
+  }
+
+  // Charger la préférence sauvegardée, sinon suivre le système
+  const saved = localStorage.getItem(KEY);
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(saved ?? (prefersDark ? DARK : LIGHT), false);
+
+  // Clic sur le bouton
+  btn?.addEventListener('click', () => {
+    const isLight = html.getAttribute('data-theme') === LIGHT;
+    const next    = isLight ? DARK : LIGHT;
+    applyTheme(next, true);
+    localStorage.setItem(KEY, next);
+  });
+
+  // Suivre les changements système si pas de préférence sauvegardée
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!localStorage.getItem(KEY)) {
+      applyTheme(e.matches ? DARK : LIGHT, true);
+    }
+  });
+})();
+
 /* ── Preloader ── */
 window.addEventListener('load', () => {
   const preloader = document.getElementById('preloader');
