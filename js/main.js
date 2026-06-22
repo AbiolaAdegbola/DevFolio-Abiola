@@ -7,59 +7,88 @@
 
 /* ── Project Data ── */
 const PROJECTS = {
+  adminsystem: {
+  title: 'Administration Systèmes & Cloud',
+  category: 'Cloud & Infrastructure',
+  desc: 'Conception, déploiement et administration d’infrastructures cloud et de services professionnels. Gestion des environnements Google Cloud Platform (GCP), Microsoft 365 et Amazon Web Services (AWS), administration des comptes Google Play Console, configuration de serveurs mutualisés et optimisation des performances. Mise en place des politiques de sécurité, gestion des utilisateurs et des accès, déploiement d’applications web et mobiles, sauvegardes automatisées, surveillance des services, configuration des domaines, DNS, certificats SSL, messagerie professionnelle et résolution des incidents afin de garantir la disponibilité, la sécurité et la continuité des services.',
+  tags: [
+    'Google Cloud Platform',
+    'Microsoft 365 Admin',
+    'AWS',
+    'Google Play Console',
+    'Linux',
+    'Apache/Nginx',
+    'DNS',
+    'SSL',
+    'Docker',
+    'Git'
+  ],
+  images: ['img/adminstystem2.png', 'img/adminstystem3.png', 'img/adminstystem4.png'],
+  live: null,
+  github: null,
+},
   monitoring: {
-    title:    'Pompe Solaire — Monitoring IoT',
+    title: 'Pompe Solaire — Monitoring IoT',
     category: 'Industriel / IoT',
-    desc:     'Système de surveillance en temps réel pour pompes solaires agricoles. Capteurs de tension, courant et débit reliés à un Arduino qui envoie les données via MQTT. Tableau de bord web avec alertes SMS automatiques en cas d\'anomalie ou de panne détectée.',
-    tags:     ['Arduino', 'Node.js', 'MQTT', 'React', 'MongoDB', 'SMS API'],
-    images:   ['img/monitoring1.png', 'img/monitoring2.png'],
-    live:     null,
-    github:   null,
+    desc: 'Système de surveillance en temps réel pour pompes solaires agricoles. Capteurs de tension, courant et débit reliés à un Arduino qui envoie les données via MQTT. Tableau de bord web avec alertes SMS automatiques en cas d\'anomalie ou de panne détectée.',
+    tags: ['Arduino', 'Node.js', 'MQTT', 'React', 'MongoDB', 'SMS API'],
+    images: ['img/monitoring1.png', 'img/monitoring2.png'],
+    live: null,
+    github: null,
   },
   ivoirebooking: {
-    title:    'IvoireBooking — Réservation Événementielle',
+    title: 'IvoireBooking — Réservation Événementielle',
     category: 'Web App',
-    desc:     'Plateforme en ligne de réservation de salles événementielles en Côte d\'Ivoire. Gestion des disponibilités en temps réel, paiement en ligne sécurisé (Stripe + Mobile Money), notifications email/SMS et espace propriétaire de salle.',
-    tags:     ['React', 'Node.js', 'Firebase', 'Stripe', 'Tailwind CSS'],
-    images:   ['img/portfolio-2.jpg'],
-    live:     null,
-    github:   null,
+    desc: 'Plateforme en ligne de réservation de salles événementielles en Côte d\'Ivoire. Gestion des disponibilités en temps réel, paiement en ligne sécurisé (Stripe + Mobile Money), notifications email/SMS et espace propriétaire de salle.',
+    tags: ['React', 'Node.js', 'Firebase', 'Stripe', 'Tailwind CSS'],
+    images: ['img/ibooking2.png', "img/ibooking3.png", "img/ibooking4.png", "img/ibooking5.png", "img/ibooking6.png", "img/ibooking7.png"],
+    live: "https://ivoirebooking.vercel.app/",
+    github: null,
   },
   erp: {
-    title:    'Système ERP — Gestion de Département',
+    title: 'Système ERP — Gestion de Département',
     category: 'Web App',
-    desc:     'Application ERP complète couvrant la gestion RH, des stocks, de la comptabilité simplifiée et du suivi de projets. Rapports analytiques exportables, tableau de bord interactif et gestion multi-utilisateurs avec rôles.',
-    tags:     ['React', 'Node.js', 'MySQL', 'Express', 'Chart.js'],
-    images:   ['img/erp1.png', 'img/erp2.png', 'img/erp3.png'],
-    live:     null,
-    github:   null,
+    desc: 'Solution ERP complète conçue pour centraliser et automatiser les processus opérationnels des entreprises. L’application intègre la gestion des ressources humaines, des stocks, de la comptabilité simplifiée, des projets et des tâches collaboratives. Elle permet également le suivi des emprunts et remboursements, la gestion des demandes de matériel avec workflow de validation, le suivi des recouvrements clients, ainsi qu’un système de veille intelligent basé sur le scraping des appels d’offres liés à l’irrigation, au forage et aux projets agricoles en Côte d’Ivoire. Des tableaux de bord interactifs, des rapports analytiques exportables, des notifications en temps réel et une gestion multi-utilisateurs avec rôles et permissions offrent une vision globale des activités et facilitent la prise de décision.',
+    tags: ['React', 'Node.js', 'MySQL', 'Express', 'Chart.js'],
+    images: ['img/erp1.png', 'img/erp2.png', 'img/erp3.png'],
+    live: null,
+    github: null,
+  },
+  maparcelle: {
+    title: 'Ma Parcelle — Smart Farming',
+    category: 'Mobile App',
+    desc: 'Solution mobile conçue pour accompagner les producteurs dans la gestion quotidienne de leurs exploitations. L’application permet de cartographier les parcelles, planifier les travaux agricoles, suivre les irrigations, enregistrer les dépenses et les récoltes, consulter les prévisions météorologiques et générer des rapports de production afin d’améliorer la prise de décision.',
+    tags: ['React Native', 'Expo', 'Node.js', 'MongoDB', 'Google Maps API', 'Weather API'],
+    images: ['img/ma parcelle.png', "img/ma parcelle2.png", "img/ma parcelle 3.png", "img/ma parcelle4.png", "img/ma parcelle5.png"],
+    live: null,
+    github: null,
   },
   agrimarket: {
-    title:    'AgriMarket — E-commerce Agricole',
+    title: 'AgriMarket — E-commerce Agricole',
     category: 'Mobile App',
-    desc:     'Application mobile e-commerce dédiée aux produits agricoles ivoiriens. Géolocalisation des vendeurs, paiement via Orange Money et MTN MoMo, système de notation des vendeurs et suivi des commandes en temps réel.',
-    tags:     ['Flutter', 'Dart', 'Firebase', 'Node.js', 'Google Maps API'],
-    images:   ['img/portfolio-4.jpg'],
-    live:     null,
-    github:   null,
+    desc: 'Application mobile e-commerce dédiée aux produits agricoles ivoiriens. Géolocalisation des vendeurs, paiement via Orange Money et MTN MoMo, système de notation des vendeurs et suivi des commandes en temps réel.',
+    tags: ['Flutter', 'Dart', 'Firebase', 'Node.js', 'Google Maps API'],
+    images: ['img/portfolio-4.jpg'],
+    live: null,
+    github: null,
   },
   deadline: {
-    title:    'DeadlineTracker — Suivi de Projets',
+    title: 'Suivi des Échéances de Facturation — Suivi de Projets',
     category: 'Web App',
-    desc:     'Application de gestion de tâches et suivi de délais avec vue Kanban, calendrier interactif et notifications automatiques avant chaque échéance. Rapports de performance par projet et par membre d\'équipe.',
-    tags:     ['React', 'Node.js', 'MongoDB', 'Socket.io', 'Nodemailer'],
-    images:   ['img/suiviEcheance1.png', 'img/suiviEcheance2.png'],
-    live:     null,
-    github:   null,
+    desc: 'Optimisez la gestion de vos factures et le suivi de vos activités grâce à une application intuitive conçue pour centraliser vos échéances et améliorer votre productivité. \nFonctionnalités principales :\n📅 Suivi des échéances de facturation en temps réel\n🔔 Notifications automatiques avant les dates limites\n✅ Gestion et affectation des tâches\n📊 Tableaux de bord interactifs avec indicateurs de performance\n📈 Suivi des factures en attente, payées et en retard\n👥 Collaboration entre les membres de l\'équipe\n📂 Historique et traçabilité des opérations\n🔍 Recherche et filtrage avancés des factures et des tâches',
+    tags: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'Nodemailer'],
+    images: ['img/suiviEcheance1.png', 'img/suiviEcheance2.png', 'img/suiviEcheance3.png', 'img/suiviEcheance4.png'],
+    live: null,
+    github: null,
   },
   automission: {
-    title:    'AutoMission — Génération de Lettres',
+    title: 'AutoMission — Génération de Lettres',
     category: 'Automatisation',
-    desc:     'Système automatisé de génération de lettres de mission officielles avec signature électronique intégrée. Archivage cloud sécurisé, export PDF, workflow de validation hiérarchique et historique complet des documents.',
-    tags:     ['Python', 'React', 'PDF-lib', 'Node.js', 'AWS S3'],
-    images:   ['img/lettreMission1.jpg', 'img/lettreMission2.png'],
-    live:     null,
-    github:   null,
+    desc: 'Système automatisé de génération de lettres de mission officielles avec signature électronique intégrée. Archivage cloud sécurisé, export PDF, workflow de validation hiérarchique et historique complet des documents.',
+    tags: ['Python', 'React', 'PDF-lib', 'Node.js', 'AWS S3'],
+    images: ['img/lettreMission1.jpg', 'img/lettreMission2.png', 'img/lettreMission3.png'],
+    live: null,
+    github: null,
   },
 };
 
@@ -72,7 +101,7 @@ window.addEventListener('load', () => {
 
 /* ── Custom Cursor ── */
 (function initCursor() {
-  const dot     = document.getElementById('cursorDot');
+  const dot = document.getElementById('cursorDot');
   const outline = document.getElementById('cursorOutline');
   if (!dot || !outline) return;
 
@@ -83,14 +112,14 @@ window.addEventListener('load', () => {
     mx = e.clientX;
     my = e.clientY;
     dot.style.left = mx + 'px';
-    dot.style.top  = my + 'px';
+    dot.style.top = my + 'px';
   });
 
   function animateOutline() {
     ox += (mx - ox) * 0.14;
     oy += (my - oy) * 0.14;
     outline.style.left = ox + 'px';
-    outline.style.top  = oy + 'px';
+    outline.style.top = oy + 'px';
     rafId = requestAnimationFrame(animateOutline);
   }
   animateOutline();
@@ -99,24 +128,24 @@ window.addEventListener('load', () => {
   const interactives = 'a, button, .service-card, .p-card, .skill-pill, .pricing-card';
   document.querySelectorAll(interactives).forEach(el => {
     el.addEventListener('mouseenter', () => {
-      dot.style.transform     = 'translate(-50%,-50%) scale(2.5)';
+      dot.style.transform = 'translate(-50%,-50%) scale(2.5)';
       outline.style.transform = 'translate(-50%,-50%) scale(1.8)';
-      outline.style.opacity   = '0.5';
+      outline.style.opacity = '0.5';
     });
     el.addEventListener('mouseleave', () => {
-      dot.style.transform     = '';
+      dot.style.transform = '';
       outline.style.transform = '';
-      outline.style.opacity   = '';
+      outline.style.opacity = '';
     });
   });
 })();
 
 /* ── Navbar ── */
 (function initNavbar() {
-  const navbar    = document.getElementById('navbar');
+  const navbar = document.getElementById('navbar');
   const hamburger = document.getElementById('hamburger');
-  const navMenu   = document.getElementById('navMenu');
-  const navLinks  = document.querySelectorAll('.nav-link');
+  const navMenu = document.getElementById('navMenu');
+  const navLinks = document.querySelectorAll('.nav-link');
 
   if (!navbar) return;
 
@@ -150,10 +179,10 @@ window.addEventListener('load', () => {
   const updateActive = () => {
     const scrollY = window.scrollY + 80;
     sections.forEach(section => {
-      const top    = section.offsetTop;
+      const top = section.offsetTop;
       const bottom = top + section.offsetHeight;
-      const id     = section.getAttribute('id');
-      const link   = document.querySelector(`.nav-link[href="#${id}"]`);
+      const id = section.getAttribute('id');
+      const link = document.querySelector(`.nav-link[href="#${id}"]`);
       if (link) link.classList.toggle('active', scrollY >= top && scrollY < bottom);
     });
   };
@@ -186,11 +215,11 @@ window.addEventListener('load', () => {
       'Concepteur d\'Applications',
       'Développeur Flutter & React Native',
     ],
-    typeSpeed:    55,
-    backSpeed:    30,
-    backDelay:    2200,
-    startDelay:   800,
-    loop:         true,
+    typeSpeed: 55,
+    backSpeed: 30,
+    backDelay: 2200,
+    startDelay: 800,
+    loop: true,
     smartBackspace: true,
   });
 })();
@@ -221,9 +250,9 @@ window.addEventListener('load', () => {
   if (!counters.length) return;
 
   const animate = el => {
-    const target   = parseInt(el.getAttribute('data-target'), 10);
+    const target = parseInt(el.getAttribute('data-target'), 10);
     const duration = 1800;
-    const step     = 16;
+    const step = 16;
     const increment = target / (duration / step);
     let current = 0;
 
@@ -285,7 +314,7 @@ window.addEventListener('load', () => {
 /* ── Portfolio Filter ── */
 (function initPortfolioFilter() {
   const buttons = document.querySelectorAll('.filter-btn');
-  const items   = document.querySelectorAll('.p-item');
+  const items = document.querySelectorAll('.p-item');
   if (!buttons.length) return;
 
   buttons.forEach(btn => {
@@ -295,7 +324,7 @@ window.addEventListener('load', () => {
 
       const filter = btn.getAttribute('data-filter');
       items.forEach(item => {
-        const cat     = item.getAttribute('data-cat');
+        const cat = item.getAttribute('data-cat');
         const visible = filter === 'all' || cat === filter;
         item.classList.toggle('hidden-by-filter', !visible);
       });
@@ -319,28 +348,28 @@ window.addEventListener('load', () => {
 
 /* ── Portfolio Modal ── */
 (function initProjectModal() {
-  const overlay  = document.getElementById('projectModal');
+  const overlay = document.getElementById('projectModal');
   const closeBtn = document.getElementById('pmClose');
-  const imgEl    = document.getElementById('pmCurrentImg');
-  const prevBtn  = document.getElementById('pmPrev');
-  const nextBtn  = document.getElementById('pmNext');
-  const counter  = document.getElementById('pmCounter');
-  const thumbs   = document.getElementById('pmThumbs');
-  const catEl    = document.getElementById('pmCat');
-  const titleEl  = document.getElementById('pmTitle');
-  const descEl   = document.getElementById('pmDesc');
-  const tagsEl   = document.getElementById('pmTags');
-  const actionsEl= document.getElementById('pmActions');
+  const imgEl = document.getElementById('pmCurrentImg');
+  const prevBtn = document.getElementById('pmPrev');
+  const nextBtn = document.getElementById('pmNext');
+  const counter = document.getElementById('pmCounter');
+  const thumbs = document.getElementById('pmThumbs');
+  const catEl = document.getElementById('pmCat');
+  const titleEl = document.getElementById('pmTitle');
+  const descEl = document.getElementById('pmDesc');
+  const tagsEl = document.getElementById('pmTags');
+  const actionsEl = document.getElementById('pmActions');
 
   if (!overlay) return;
 
   let currentImages = [];
-  let currentIndex  = 0;
+  let currentIndex = 0;
 
   function setImage(index) {
     currentIndex = index;
-    imgEl.src    = currentImages[index];
-    imgEl.alt    = titleEl.textContent;
+    imgEl.src = currentImages[index];
+    imgEl.alt = titleEl.textContent;
     counter.textContent = `${index + 1} / ${currentImages.length}`;
     prevBtn.disabled = index === 0;
     nextBtn.disabled = index === currentImages.length - 1;
@@ -355,12 +384,12 @@ window.addEventListener('load', () => {
     if (!data) return;
 
     currentImages = data.images;
-    currentIndex  = 0;
+    currentIndex = 0;
 
     // Populate info
-    catEl.textContent   = data.category;
+    catEl.textContent = data.category;
     titleEl.textContent = data.title;
-    descEl.textContent  = data.desc;
+    descEl.textContent = data.desc;
 
     tagsEl.innerHTML = data.tags.map(t => `<span>${t}</span>`).join('');
 
@@ -381,7 +410,7 @@ window.addEventListener('load', () => {
     // Build thumbnails
     thumbs.innerHTML = currentImages.map((src, i) =>
       `<div class="pm-thumb${i === 0 ? ' active' : ''}" data-index="${i}">
-        <img src="${src}" alt="Vue ${i+1}">
+        <img src="${src}" alt="Vue ${i + 1}">
       </div>`
     ).join('');
 
@@ -411,7 +440,7 @@ window.addEventListener('load', () => {
   // Open on card click / button click
   document.querySelectorAll('.p-item').forEach(item => {
     const card = item.querySelector('.p-card');
-    const btn  = item.querySelector('.open-project-modal');
+    const btn = item.querySelector('.open-project-modal');
     const projectId = item.dataset.project;
 
     // Click on card opens modal
@@ -432,9 +461,9 @@ window.addEventListener('load', () => {
   // Keyboard navigation
   document.addEventListener('keydown', e => {
     if (overlay.hidden) return;
-    if (e.key === 'Escape')      closeModal();
-    if (e.key === 'ArrowLeft')   prevBtn?.click();
-    if (e.key === 'ArrowRight')  nextBtn?.click();
+    if (e.key === 'Escape') closeModal();
+    if (e.key === 'ArrowLeft') prevBtn?.click();
+    if (e.key === 'ArrowRight') nextBtn?.click();
   });
 
   // Touch swipe
@@ -448,10 +477,10 @@ window.addEventListener('load', () => {
 
 /* ── Video Modal ── */
 (function initVideoModal() {
-  const overlay  = document.getElementById('videoModal');
+  const overlay = document.getElementById('videoModal');
   const closeBtn = document.getElementById('vmClose');
-  const frame    = document.getElementById('vmFrame');
-  const titleEl  = document.getElementById('vmTitle');
+  const frame = document.getElementById('vmFrame');
+  const titleEl = document.getElementById('vmTitle');
 
   if (!overlay) return;
 
@@ -496,14 +525,14 @@ window.addEventListener('load', () => {
         {{from_name}}, {{from_email}}, {{subject}}, {{message}}
    4. Remplacez les 3 valeurs ci-dessous par vos vraies clés
 ──────────────────────────────────────────────────────────── */
-const EMAILJS_PUBLIC_KEY  = 'VOTRE_PUBLIC_KEY';   // Account > API Keys
-const EMAILJS_SERVICE_ID  = 'VOTRE_SERVICE_ID';   // Email Services > Service ID
-const EMAILJS_TEMPLATE_ID = 'VOTRE_TEMPLATE_ID';  // Email Templates > Template ID
+const EMAILJS_PUBLIC_KEY = 't6WfXVf-lvCnw7uym';   // Account > API Keys
+const EMAILJS_SERVICE_ID = 'service_o1nnpzp';   // Email Services > Service ID
+const EMAILJS_TEMPLATE_ID = 'template_i40qm9l';  // Email Templates > Template ID
 
 /* ── Contact Form ── */
 (function initContactForm() {
-  const form      = document.getElementById('contactForm');
-  const msgEl     = document.getElementById('formMsg');
+  const form = document.getElementById('contactForm');
+  const msgEl = document.getElementById('formMsg');
   if (!form) return;
 
   // Init EmailJS once SDK is loaded
@@ -515,10 +544,10 @@ const EMAILJS_TEMPLATE_ID = 'VOTRE_TEMPLATE_ID';  // Email Templates > Template 
     e.preventDefault();
 
     const submitBtn = form.querySelector('[type="submit"]');
-    const name      = form.querySelector('#cName')?.value.trim();
-    const email     = form.querySelector('#cEmail')?.value.trim();
-    const subject   = form.querySelector('#cSubject')?.value.trim();
-    const message   = form.querySelector('#cMessage')?.value.trim();
+    const name = form.querySelector('#cName')?.value.trim();
+    const email = form.querySelector('#cEmail')?.value.trim();
+    const subject = form.querySelector('#cSubject')?.value.trim();
+    const message = form.querySelector('#cMessage')?.value.trim();
 
     // Client-side validation
     if (!name || !email || !subject || !message) {
@@ -547,12 +576,12 @@ const EMAILJS_TEMPLATE_ID = 'VOTRE_TEMPLATE_ID';  // Email Templates > Template 
 
     try {
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-        from_name:  name,
+        from_name: name,
         from_email: email,
-        subject:    subject,
-        message:    message,
-        reply_to:   email,
-        to_email:   'abiole68@gmail.com',
+        subject: subject,
+        message: message,
+        reply_to: email,
+        to_email: 'abiole68@gmail.com',
       });
       showMsg('✅ Message envoyé ! Je vous répondrai très bientôt.', 'success');
       form.reset();
@@ -568,7 +597,7 @@ const EMAILJS_TEMPLATE_ID = 'VOTRE_TEMPLATE_ID';  // Email Templates > Template 
   function showMsg(text, type) {
     if (!msgEl) return;
     msgEl.textContent = text;
-    msgEl.className   = `form-msg ${type}`;
+    msgEl.className = `form-msg ${type}`;
     msgEl.classList.remove('hidden');
     setTimeout(() => msgEl.classList.add('hidden'), 7000);
   }
