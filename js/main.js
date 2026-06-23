@@ -573,9 +573,9 @@ window.addEventListener('load', () => {
 
   if (!overlay || !openBtn) return;
 
-  function openThesis() {
-    const viewUrl = `https://drive.google.com/file/d/1em3cghnHhG7IwMSj4kqgiAz4VUoKq4Zl/view?usp=sharing`;
+  const DRIVE_EMBED_URL = 'https://drive.google.com/file/d/1em3cghnHhG7IwMSj4kqgiAz4VUoKq4Zl/preview';
 
+  function openThesis() {
     frame.src = '';
     loading.hidden  = false;
     errorEl.hidden  = true;
@@ -585,7 +585,7 @@ window.addEventListener('load', () => {
 
     frame.onload = () => { loading.hidden = true; };
     frame.onerror = () => { loading.hidden = true; errorEl.hidden = false; };
-    frame.src = viewUrl;
+    frame.src = DRIVE_EMBED_URL;
   }
 
   function closeThesis() {
