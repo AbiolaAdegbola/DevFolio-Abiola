@@ -341,6 +341,7 @@ window.addEventListener('load', () => {
       const target = tab.getAttribute('data-tab');
       document.getElementById('tab-pro')?.classList.toggle('hidden', target !== 'pro');
       document.getElementById('tab-asso')?.classList.toggle('hidden', target !== 'asso');
+      document.getElementById('tab-formation')?.classList.toggle('hidden', target !== 'formation');
 
       // Re-trigger reveal animations for newly visible items
       const visibleTimeline = document.getElementById(`tab-${target}`);
