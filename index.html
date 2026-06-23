@@ -559,9 +559,9 @@
                         </div>
 
                         <div class="thesis-actions">
-                            <a href="docs/memoire-master-adegbola-abiola.docx" download="Memoire_Master_Adegbola_Abiola.docx" class="thesis-download-btn">
-                                <i class="fas fa-file-download"></i> Télécharger le mémoire
-                            </a>
+                            <button class="thesis-read-btn" id="openThesisBtn">
+                                <i class="fas fa-book-open"></i> Lire le mémoire
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1328,6 +1328,36 @@
                 <iframe id="vmFrame" src="" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         MODAL — LECTEUR MÉMOIRE
+    ══════════════════════════════════════ -->
+    <div id="thesisModal" class="modal-overlay thesis-modal-overlay" role="dialog" aria-modal="true" aria-label="Lecteur mémoire" hidden>
+        <div class="tm-inner">
+            <div class="tm-header">
+                <div class="tm-header-info">
+                    <i class="fas fa-scroll tm-icon"></i>
+                    <span class="tm-header-title">Mémoire de Master — Abiola Adegbola</span>
+                    <span class="tm-mention-chip"><i class="fas fa-star"></i> Mention Bien</span>
+                </div>
+                <button class="modal-close" id="tmClose" aria-label="Fermer">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="tm-body">
+                <iframe id="tmFrame" src="" frameborder="0" class="tm-frame"
+                    title="Lecteur mémoire" loading="lazy"></iframe>
+                <div class="tm-loading" id="tmLoading">
+                    <div class="tm-spinner"></div>
+                    <p>Chargement du document…</p>
+                </div>
+                <div class="tm-error" id="tmError" hidden>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>Le document ne peut pas s'afficher dans ce navigateur.</p>
+                </div>
             </div>
         </div>
     </div>
