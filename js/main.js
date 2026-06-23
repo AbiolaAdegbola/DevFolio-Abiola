@@ -343,7 +343,7 @@ window.addEventListener('load', () => {
       document.getElementById('tab-asso')?.classList.toggle('hidden', target !== 'asso');
       document.getElementById('tab-formation')?.classList.toggle('hidden', target !== 'formation');
 
-      // Re-trigger reveal animations for newly visible items
+      // Re-trigger reveal animations for newly visible items 
       const visibleTimeline = document.getElementById(`tab-${target}`);
       if (visibleTimeline) {
         const items = visibleTimeline.querySelectorAll('.reveal');
