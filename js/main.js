@@ -562,6 +562,52 @@ window.addEventListener('load', () => {
   });
 })();
 
+/* ── Thesis Reader Modal ── */
+(function initThesisModal() {
+  const overlay  = document.getElementById('thesisModal');
+  const closeBtn = document.getElementById('tmClose');
+  const openBtn  = document.getElementById('openThesisBtn');
+  const frame    = document.getElementById('tmFrame');
+  const loading  = document.getElementById('tmLoading');
+  const errorEl  = document.getElementById('tmError');
+
+  if (!overlay || !openBtn) return;
+
+  const DOC_PATH = 'docs/memoire-master-adegbola-abiola.docx';
+
+  function openThesis() {
+    const docUrl  = `${window.location.origin}/${DOC_PATH}`;
+    const viewUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(docUrl)}&embedded=true`;
+
+    frame.src = '';
+    loading.hidden  = false;
+    errorEl.hidden  = true;
+    overlay.hidden  = false;
+    requestAnimationFrame(() => overlay.classList.add('active'));
+    document.body.style.overflow = 'hidden';
+
+    frame.onload = () => { loading.hidden = true; };
+    frame.onerror = () => { loading.hidden = true; errorEl.hidden = false; };
+    frame.src = viewUrl;
+  }
+
+  function closeThesis() {
+    overlay.classList.remove('active');
+    overlay.addEventListener('transitionend', () => {
+      overlay.hidden = true;
+      frame.src = '';
+      document.body.style.overflow = '';
+    }, { once: true });
+  }
+
+  openBtn.addEventListener('click', openThesis);
+  closeBtn?.addEventListener('click', closeThesis);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeThesis(); });
+  document.addEventListener('keydown', e => {
+    if (!overlay.hidden && e.key === 'Escape') closeThesis();
+  });
+})();
+
 /* ── EmailJS Config ──────────────────────────────────────────
    Pour configurer l'envoi d'emails :
    1. Créez un compte gratuit sur https://www.emailjs.com
