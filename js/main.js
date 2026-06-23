@@ -564,32 +564,37 @@ window.addEventListener('load', () => {
 
 /* ── Thesis Reader Modal ── */
 (function initThesisModal() {
-  const overlay  = document.getElementById('thesisModal');
-  const closeBtn = document.getElementById('tmClose');
-  const openBtn  = document.getElementById('openThesisBtn');
-  const frame    = document.getElementById('tmFrame');
-  const loading  = document.getElementById('tmLoading');
-  const errorEl  = document.getElementById('tmError');
+  const overlay     = document.getElementById('thesisModal');
+  const closeBtn    = document.getElementById('tmClose');
+  const openBtn     = document.getElementById('openThesisBtn');
+  const frame       = document.getElementById('tmFrame');
+  const loading     = document.getElementById('tmLoading');
+  const fallbackBtn = document.getElementById('tmFallbackLink');
 
   if (!overlay || !openBtn) return;
 
   const DRIVE_EMBED_URL = 'https://drive.google.com/file/d/1em3cghnHhG7IwMSj4kqgiAz4VUoKq4Zl/preview';
+  let fallbackTimer = null;
 
   function openThesis() {
-    frame.src = '';
-    loading.hidden  = false;
-    errorEl.hidden  = true;
-    overlay.hidden  = false;
+    loading.hidden      = false;
+    fallbackBtn.hidden  = true;
+    overlay.hidden      = false;
     requestAnimationFrame(() => overlay.classList.add('active'));
     document.body.style.overflow = 'hidden';
 
-    frame.onload = () => { loading.hidden = true; };
-    frame.onerror = () => { loading.hidden = true; errorEl.hidden = false; };
+    // onload = Drive responded (document shown or Drive's own error page)
+    frame.onload = () => { loading.hidden = true; clearTimeout(fallbackTimer); };
+
+    // After 10s without onload, show the "Ouvrir dans Drive" fallback
+    fallbackTimer = setTimeout(() => { fallbackBtn.hidden = false; }, 10000);
+
     frame.src = DRIVE_EMBED_URL;
   }
 
   function closeThesis() {
     overlay.classList.remove('active');
+    clearTimeout(fallbackTimer);
     overlay.addEventListener('transitionend', () => {
       overlay.hidden = true;
       frame.src = '';

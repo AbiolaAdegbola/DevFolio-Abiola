@@ -1343,20 +1343,29 @@
                     <span class="tm-header-title">Mémoire de Master — Abiola Adegbola</span>
                     <span class="tm-mention-chip"><i class="fas fa-star"></i> Mention Bien</span>
                 </div>
-                <button class="modal-close" id="tmClose" aria-label="Fermer">
-                    <i class="fas fa-times"></i>
-                </button>
+                <div class="tm-header-actions">
+                    <a href="https://drive.google.com/file/d/1em3cghnHhG7IwMSj4kqgiAz4VUoKq4Zl/view"
+                       target="_blank" rel="noopener" class="tm-open-btn" title="Ouvrir dans Google Drive">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>Ouvrir dans Drive</span>
+                    </a>
+                    <button class="modal-close" id="tmClose" aria-label="Fermer">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
             </div>
             <div class="tm-body">
                 <iframe id="tmFrame" src="" frameborder="0" class="tm-frame"
-                    title="Lecteur mémoire" loading="lazy"></iframe>
+                    title="Lecteur mémoire"
+                    allow="fullscreen"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <div class="tm-loading" id="tmLoading">
                     <div class="tm-spinner"></div>
                     <p>Chargement du document…</p>
-                </div>
-                <div class="tm-error" id="tmError" hidden>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <p>Le document ne peut pas s'afficher dans ce navigateur.</p>
+                    <a href="https://drive.google.com/file/d/1em3cghnHhG7IwMSj4kqgiAz4VUoKq4Zl/view"
+                       target="_blank" rel="noopener" class="tm-fallback-link" id="tmFallbackLink" hidden>
+                        <i class="fas fa-external-link-alt"></i> L'aperçu tarde — Ouvrir dans Drive
+                    </a>
                 </div>
             </div>
         </div>
