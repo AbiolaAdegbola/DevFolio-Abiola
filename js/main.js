@@ -1029,7 +1029,7 @@ const TRANSLATIONS = {
       return;
     }
 
-    submitBtn.disabled = true;
+    submitBtn.disabled = true; 
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours…';
 
     // Check if EmailJS keys are configured
