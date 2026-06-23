@@ -704,8 +704,11 @@ window.addEventListener('load', () => {
       form.reset();
     } catch (err) {
       console.error('EmailJS devis error:', err);
-      const detail = err?.text || err?.message || JSON.stringify(err);
-      showMsg(`Erreur d'envoi : ${detail}`, 'error');
+      const isNetwork = err?.message === 'Failed to fetch' || err instanceof TypeError;
+      const msg = isNetwork
+        ? 'Connexion bloquée (ad-bloqueur ?). Essayez en navigation privée ou contactez-moi directement : abiole68@gmail.com'
+        : `Erreur : ${err?.text || err?.message || 'inconnue'}`;
+      showMsg(msg, 'error');
     } finally {
       submitBtn.disabled = false;
       submitBtn.querySelector('.btn-text').classList.remove('hidden');
@@ -731,9 +734,9 @@ const EMAILJS_SERVICE_ID      = 'service_o1nnpzp';
 const EMAILJS_TEMPLATE_ID     = 'template_i40qm9l';
 const EMAILJS_DEVIS_TEMPLATE_ID = 'template_hyiy908';
 
-/* Initialisation globale — appelée une seule fois dès le chargement */
+/* Initialisation globale EmailJS v4 */
 if (typeof emailjs !== 'undefined') {
-  emailjs.init(EMAILJS_PUBLIC_KEY);
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 }
 
 /* ── Contact Form ── */
@@ -789,7 +792,11 @@ if (typeof emailjs !== 'undefined') {
       form.reset();
     } catch (err) {
       console.error('[EmailJS]', err);
-      showMsg('❌ Échec de l\'envoi. Réessayez ou contactez-moi via WhatsApp.', 'error');
+      const isNetwork = err?.message === 'Failed to fetch' || err instanceof TypeError;
+      showMsg(isNetwork
+        ? '❌ Connexion bloquée (ad-bloqueur ?). Essayez en navigation privée.'
+        : '❌ Échec de l\'envoi. Réessayez ou contactez-moi via WhatsApp.',
+        'error');
     } finally {
       submitBtn.disabled = false;
       submitBtn.innerHTML = 'Envoyer le message <i class="fas fa-paper-plane"></i>';
