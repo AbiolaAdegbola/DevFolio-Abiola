@@ -573,12 +573,7 @@ window.addEventListener('load', () => {
 
   if (!overlay || !openBtn) return;
 
-  const DOC_PATH = 'https://drive.google.com/file/d/1em3cghnHhG7IwMSj4kqgiAz4VUoKq4Zl/view?usp=sharing';
-  // const DOC_PATH = 'docs/memoire-master-adegbola-abiola.docx';
-
   function openThesis() {
-    const docUrl  = `https://drive.google.com/file/d/1em3cghnHhG7IwMSj4kqgiAz4VUoKq4Zl/view?usp=sharing`;
-    // const docUrl  = `${window.location.origin}/${DOC_PATH}`;
     const viewUrl = `https://drive.google.com/file/d/1em3cghnHhG7IwMSj4kqgiAz4VUoKq4Zl/view?usp=sharing`;
 
     frame.src = '';
