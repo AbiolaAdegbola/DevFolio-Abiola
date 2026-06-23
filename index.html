@@ -48,18 +48,18 @@
             </a>
             <div class="nav-menu" id="navMenu">
                 <ul class="nav-list">
-                    <li><a href="#home"       class="nav-link">Accueil</a></li>
-                    <li><a href="#about"      class="nav-link">À propos</a></li>
-                    <li><a href="#services"   class="nav-link">Services</a></li>
-                    <li><a href="#experience" class="nav-link">Expérience</a></li>
-                    <li><a href="#skills"     class="nav-link">Compétences</a></li>
-                    <li><a href="#portfolio"  class="nav-link">Portfolio</a></li>
-                    <li><a href="#pricing"       class="nav-link">Tarifs</a></li>
-                    <li><a href="#testimonials" class="nav-link">Témoignages</a></li>
-                    <li><a href="#contact"      class="nav-link">Contact</a></li>
+                    <li><a href="#home"       class="nav-link" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="#about"      class="nav-link" data-i18n="nav.about">À propos</a></li>
+                    <li><a href="#services"   class="nav-link" data-i18n="nav.services">Services</a></li>
+                    <li><a href="#experience" class="nav-link" data-i18n="nav.experience">Expérience</a></li>
+                    <li><a href="#skills"     class="nav-link" data-i18n="nav.skills">Compétences</a></li>
+                    <li><a href="#portfolio"  class="nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
+                    <li><a href="#pricing"       class="nav-link" data-i18n="nav.pricing">Tarifs</a></li>
+                    <li><a href="#testimonials" class="nav-link" data-i18n="nav.testimonials">Témoignages</a></li>
+                    <li><a href="#contact"      class="nav-link" data-i18n="nav.contact">Contact</a></li>
                 </ul>
             </div>
-            <a href="#contact" class="nav-cta">Travailler avec moi</a>
+            <a href="#contact" class="nav-cta" data-i18n="nav.cta">Travailler avec moi</a>
             <button class="theme-toggle" id="themeToggle" aria-label="Basculer le thème">
                 <i class="fas fa-moon" id="themeIcon"></i>
             </button>
@@ -86,26 +86,26 @@
             <div class="hero-text">
                 <div class="hero-badge reveal">
                     <span class="badge-pulse"></span>
-                    Disponible pour des projets
+                    <span data-i18n="hero.available">Disponible pour des projets</span>
                 </div>
                 <h1 class="hero-title reveal">
-                    <span class="hero-greeting">Bonjour, je suis</span>
+                    <span class="hero-greeting" data-i18n="hero.greeting">Bonjour, je suis</span>
                     <span class="hero-name">Abiola <span class="gradient-text">Adegbola</span></span>
                 </h1>
                 <p class="hero-typed reveal">
                     <span class="mono">// </span><span id="typed"></span>
                 </p>
-                <p class="hero-description reveal">
+                <p class="hero-description reveal" data-i18n-html="hero.description">
                     Ingénieur Full Stack &amp; Automaticien Industriel passionné, basé en
                     <strong>Côte d'Ivoire</strong>. Je conçois des solutions web, mobiles
-                    et des systèmes industriels intelligents. 
+                    et des systèmes industriels intelligents.
                 </p>
                 <div class="hero-actions reveal">
                     <a href="#portfolio" class="btn btn-primary">
-                        Voir mes projets <i class="fas fa-arrow-right"></i>
+                        <span data-i18n="hero.cta1">Voir mes projets</span> <i class="fas fa-arrow-right"></i>
                     </a>
                     <a href="CV ABIOLA.pdf" class="btn btn-ghost" download>
-                        Télécharger CV <i class="fas fa-download"></i>
+                        <span data-i18n="hero.cta2">Télécharger CV</span> <i class="fas fa-download"></i>
                     </a>
                 </div>
                 <div class="hero-socials reveal">
@@ -148,7 +148,7 @@
         <!-- Scroll indicator -->
         <div class="hero-scroll">
             <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-            <span>Défiler</span>
+            <span data-i18n="hero.scroll">Défiler</span>
         </div>
     </section>
 
@@ -162,28 +162,28 @@
                     <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
                     <div class="stat-body">
                         <div class="stat-num"><span class="counter" data-target="30">0</span>+</div>
-                        <p>Projets réalisés</p>
+                        <p data-i18n="stats.projects">Projets réalisés</p>
                     </div>
                 </div>
                 <div class="stat-card reveal">
                     <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
                     <div class="stat-body">
                         <div class="stat-num"><span class="counter" data-target="40">0</span>+</div>
-                        <p>Technologies maîtrisées</p>
+                        <p data-i18n="stats.techs">Technologies maîtrisées</p>
                     </div>
                 </div>
                 <div class="stat-card reveal">
                     <div class="stat-icon"><i class="fas fa-user-check"></i></div>
                     <div class="stat-body">
                         <div class="stat-num"><span class="counter" data-target="5">0</span>+</div>
-                        <p>Clients satisfaits</p>
+                        <p data-i18n="stats.clients">Clients satisfaits</p>
                     </div>
                 </div>
                 <div class="stat-card reveal">
                     <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
                     <div class="stat-body">
                         <div class="stat-num"><span class="counter" data-target="4">0</span>+</div>
-                        <p>Années d'expérience</p>
+                        <p data-i18n="stats.years">Années d'expérience</p>
                     </div>
                 </div>
             </div>
@@ -196,8 +196,8 @@
     <section id="about" class="section about-section">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">// À propos</span>
-                <h2>Qui suis-je <span class="gradient-text">?</span></h2>
+                <span class="section-tag" data-i18n="about.tag">// À propos</span>
+                <h2 data-i18n-html="about.title">Qui suis-je <span class="gradient-text">?</span></h2>
             </div>
             <div class="about-grid">
                 <div class="about-img-side reveal-left">
@@ -211,16 +211,16 @@
                     </div>
                 </div>
                 <div class="about-content reveal-right">
-                    <p class="about-intro">
+                    <p class="about-intro" data-i18n-html="about.intro">
                         Je suis <strong>ADEGBOLA Abiola Mansourou</strong>, Ingénieur Full Stack
                         et Automaticien Industriel passionné par la création de solutions technologiques innovantes.
                     </p>
-                    <p class="about-text">
+                    <p class="about-text" data-i18n-html="about.text1">
                         Avec plus de 4 ans d'expérience en développement web et mobile, ainsi qu'en
                         automatisme industriel (Siemens SIMATIC S7-300), je transforme des idées complexes
                         en produits digitaux performants et intuitifs.
                     </p>
-                    <p class="about-text">
+                    <p class="about-text" data-i18n-html="about.text2">
                         Actuellement développeur chez <strong>Green Agro Valley</strong>, je travaille
                         sur des solutions AgriTech innovantes pour moderniser l'agriculture en Afrique.
                     </p>
@@ -239,12 +239,12 @@
                         </div>
                         <div class="info-row">
                             <i class="fas fa-graduation-cap"></i>
-                            <span>Ingénieur en Informatique</span>
+                            <span data-i18n="about.degree">Ingénieur en Informatique</span>
                         </div>
                     </div>
                     <div class="about-actions">
                         <a href="CV ABIOLA.pdf" class="btn btn-primary" download>
-                            <i class="fas fa-download"></i> Télécharger CV
+                            <i class="fas fa-download"></i> <span data-i18n="hero.cta2">Télécharger CV</span>
                         </a>
                         <div class="about-socials">
                             <a href="https://www.linkedin.com/in/adegbola-abiola-7a5427222/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
@@ -263,9 +263,9 @@
     <section id="services" class="section services-section">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">// Services</span>
-                <h2>Ce que je <span class="gradient-text">fais</span></h2>
-                <p class="section-sub">Des solutions sur mesure pour vos besoins digitaux et industriels</p>
+                <span class="section-tag" data-i18n="services.tag">// Services</span>
+                <h2 data-i18n-html="services.title">Ce que je <span class="gradient-text">fais</span></h2>
+                <p class="section-sub" data-i18n="services.sub">Des solutions sur mesure pour vos besoins digitaux et industriels</p>
             </div>
             <div class="services-grid">
 
@@ -274,8 +274,8 @@
                     <div class="service-icon-wrap">
                         <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h3>Développement Web</h3>
-                    <p>Sites vitrine, applications web et plateformes digitales modernes, responsives et performants.</p>
+                    <h3 data-i18n="service.web.title">Développement Web</h3>
+                    <p data-i18n="service.web.desc">Sites vitrine, applications web et plateformes digitales modernes, responsives et performants.</p>
                     <div class="service-techs">
                         <span>React</span><span>Node.js</span><span>PHP</span><span>MySQL</span>
                     </div>
@@ -287,8 +287,8 @@
                     <div class="service-icon-wrap">
                         <i class="fas fa-mobile-screen-button"></i>
                     </div>
-                    <h3>Applications Mobiles</h3>
-                    <p>Applications cross-platform hautes performances pour iOS et Android avec une expérience native.</p>
+                    <h3 data-i18n="service.mobile.title">Applications Mobiles</h3>
+                    <p data-i18n="service.mobile.desc">Applications cross-platform hautes performances pour iOS et Android avec une expérience native.</p>
                     <div class="service-techs">
                         <span>Flutter</span><span>React Native</span><span>Firebase</span>
                     </div>
@@ -300,8 +300,8 @@
                     <div class="service-icon-wrap">
                         <i class="fas fa-microchip"></i>
                     </div>
-                    <h3>Automatisme Industriel</h3>
-                    <p>Conception et programmation de systèmes automatisés avec Siemens SIMATIC S7-300 et TIA PORTAL.</p>
+                    <h3 data-i18n="service.auto.title">Automatisme Industriel</h3>
+                    <p data-i18n="service.auto.desc">Conception et programmation de systèmes automatisés avec Siemens SIMATIC S7-300 et TIA PORTAL.</p>
                     <div class="service-techs">
                         <span>TIA PORTAL</span><span>SIMATIC S7</span><span>GRAFCET</span>
                     </div>
@@ -313,8 +313,8 @@
                     <div class="service-icon-wrap">
                         <i class="fas fa-magnifying-glass-chart"></i>
                     </div>
-                    <h3>UI/UX &amp; SEO</h3>
-                    <p>Optimisation de l'expérience utilisateur et du référencement naturel pour maximiser votre visibilité.</p>
+                    <h3 data-i18n="service.uiux.title">UI/UX &amp; SEO</h3>
+                    <p data-i18n="service.uiux.desc">Optimisation de l'expérience utilisateur et du référencement naturel pour maximiser votre visibilité.</p>
                     <div class="service-techs">
                         <span>Figma</span><span>SEO</span><span>Analytics</span>
                     </div>
@@ -331,20 +331,20 @@
     <section id="experience" class="section experience-section">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">// Parcours</span>
-                <h2>Mon <span class="gradient-text">expérience</span></h2>
+                <span class="section-tag" data-i18n="exp.tag">// Parcours</span>
+                <h2 data-i18n-html="exp.title">Mon <span class="gradient-text">expérience</span></h2>
             </div>
 
             <!-- Tabs -->
             <div class="exp-tabs reveal">
                 <button class="exp-tab active" data-tab="pro">
-                    <i class="fas fa-briefcase"></i> Professionnel
+                    <i class="fas fa-briefcase"></i> <span data-i18n="exp.tab.pro">Professionnel</span>
                 </button>
                 <button class="exp-tab" data-tab="asso">
-                    <i class="fas fa-users"></i> Associatif
+                    <i class="fas fa-users"></i> <span data-i18n="exp.tab.asso">Associatif</span>
                 </button>
                 <button class="exp-tab" data-tab="formation">
-                    <i class="fas fa-graduation-cap"></i> Formation
+                    <i class="fas fa-graduation-cap"></i> <span data-i18n="exp.tab.formation">Formation</span>
                 </button>
             </div>
 
@@ -597,9 +597,9 @@
     <section id="skills" class="section skills-section">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">// Compétences</span>
-                <h2>Ma <span class="gradient-text">stack technique</span></h2>
-                <p class="section-sub">Technologies et outils que je maîtrise au quotidien</p>
+                <span class="section-tag" data-i18n="skills.tag">// Compétences</span>
+                <h2 data-i18n-html="skills.title">Ma <span class="gradient-text">stack technique</span></h2>
+                <p class="section-sub" data-i18n="skills.sub">Technologies et outils que je maîtrise au quotidien</p>
             </div>
 
             <div class="skills-categories">
@@ -702,16 +702,16 @@
     <section id="portfolio" class="section portfolio-section">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">// Portfolio</span>
-                <h2>Mes <span class="gradient-text">projets</span></h2>
-                <p class="section-sub">Quelques réalisations dont je suis particulièrement fier</p>
+                <span class="section-tag" data-i18n="portfolio.tag">// Portfolio</span>
+                <h2 data-i18n-html="portfolio.title">Mes <span class="gradient-text">projets</span></h2>
+                <p class="section-sub" data-i18n="portfolio.sub">Quelques réalisations dont je suis particulièrement fier</p>
             </div>
 
             <div class="portfolio-filter reveal">
-                <button class="filter-btn active" data-filter="all">Tous</button>
-                <button class="filter-btn" data-filter="web">Web</button>
-                <button class="filter-btn" data-filter="mobile">Mobile</button>
-                <button class="filter-btn" data-filter="industrial">Industriel</button>
+                <button class="filter-btn active" data-filter="all" data-i18n="portfolio.filter.all">Tous</button>
+                <button class="filter-btn" data-filter="web" data-i18n="portfolio.filter.web">Web</button>
+                <button class="filter-btn" data-filter="mobile" data-i18n="portfolio.filter.mobile">Mobile</button>
+                <button class="filter-btn" data-filter="industrial" data-i18n="portfolio.filter.industrial">Industriel</button>
             </div>
 
             <div class="portfolio-grid" id="portfolioGrid">
@@ -943,9 +943,9 @@
     <section id="pricing" class="section pricing-section">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">// Tarifs</span>
-                <h2>Mes <span class="gradient-text">offres</span></h2>
-                <p class="section-sub">Des tarifs transparents pour des projets de qualité professionnelle</p>
+                <span class="section-tag" data-i18n="pricing.tag">// Tarifs</span>
+                <h2 data-i18n-html="pricing.title">Mes <span class="gradient-text">offres</span></h2>
+                <p class="section-sub" data-i18n="pricing.sub">Des tarifs transparents pour des projets de qualité professionnelle</p>
             </div>
             <div class="pricing-grid">
 
@@ -967,7 +967,7 @@
                         <li><i class="fas fa-check"></i> Notifications email</li>
                     </ul>
                     <button type="button" class="btn btn-ghost btn-full open-devis-modal" data-plan="Site Vitrine" data-price="150 000 FCFA">
-                        <i class="fas fa-file-invoice"></i> Demander un devis
+                        <i class="fas fa-file-invoice"></i> <span data-i18n="pricing.cta">Demander un devis</span>
                     </button>
                 </div>
 
@@ -991,7 +991,7 @@
                         <li><i class="fas fa-check"></i> Support 3 mois</li>
                     </ul>
                     <button type="button" class="btn btn-primary btn-full open-devis-modal" data-plan="E-commerce" data-price="480 000 FCFA">
-                        <i class="fas fa-file-invoice"></i> Demander un devis
+                        <i class="fas fa-file-invoice"></i> <span data-i18n="pricing.cta">Demander un devis</span>
                     </button>
                 </div>
 
@@ -1013,7 +1013,7 @@
                         <li><i class="fas fa-check"></i> Support 6 mois</li>
                     </ul>
                     <button type="button" class="btn btn-ghost btn-full open-devis-modal" data-plan="Projet Sur Mesure" data-price="890 000+ FCFA">
-                        <i class="fas fa-file-invoice"></i> Discutons de votre projet
+                        <i class="fas fa-file-invoice"></i> <span data-i18n="pricing.btn3">Discutons de votre projet</span>
                     </button>
                 </div>
 
@@ -1027,9 +1027,9 @@
     <section id="testimonials" class="section testimonials-section">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">// Témoignages</span>
-                <h2>Ce qu'ils <span class="gradient-text">disent</span></h2>
-                <p class="section-sub">Retours de clients et partenaires sur nos collaborations</p>
+                <span class="section-tag" data-i18n="testimonials.tag">// Témoignages</span>
+                <h2 data-i18n-html="testimonials.title">Ce qu'ils <span class="gradient-text">disent</span></h2>
+                <p class="section-sub" data-i18n="testimonials.sub">Retours de clients et partenaires sur nos collaborations</p>
             </div>
             <div class="videos-grid">
 
@@ -1134,10 +1134,10 @@
             <div class="blob blob-cta-2"></div>
         </div>
         <div class="container cta-inner reveal">
-            <h2>Prêt à donner vie à votre projet ?</h2>
-            <p>Discutons de vos idées et transformons-les en réalité digitale.</p>
+            <h2 data-i18n="cta.title">Prêt à donner vie à votre projet ?</h2>
+            <p data-i18n="cta.desc">Discutons de vos idées et transformons-les en réalité digitale.</p>
             <a href="https://wa.me/2250141870579" target="_blank" class="btn btn-primary btn-lg">
-                <i class="fab fa-whatsapp"></i> Démarrer un projet
+                <i class="fab fa-whatsapp"></i> <span data-i18n="cta.btn">Démarrer un projet</span>
             </a>
         </div>
     </section>
@@ -1148,9 +1148,9 @@
     <section id="contact" class="section contact-section">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">// Contact</span>
-                <h2>Travaillons <span class="gradient-text">ensemble</span></h2>
-                <p class="section-sub">N'hésitez pas à me contacter pour discuter de votre projet</p>
+                <span class="section-tag" data-i18n="contact.tag">// Contact</span>
+                <h2 data-i18n-html="contact.title">Travaillons <span class="gradient-text">ensemble</span></h2>
+                <p class="section-sub" data-i18n="contact.sub">N'hésitez pas à me contacter pour discuter de votre projet</p>
             </div>
             <div class="contact-grid">
 
@@ -1158,7 +1158,7 @@
                     <a href="tel:+2250141870579" class="contact-card">
                         <div class="cc-icon"><i class="fas fa-phone"></i></div>
                         <div>
-                            <h4>Téléphone</h4>
+                            <h4 data-i18n="contact.phone">Téléphone</h4>
                             <p>+225 01 41 87 05 79</p>
                         </div>
                         <i class="fas fa-arrow-right cc-arrow"></i>
@@ -1182,7 +1182,7 @@
                     <div class="contact-card no-link">
                         <div class="cc-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div>
-                            <h4>Localisation</h4>
+                            <h4 data-i18n="contact.location">Localisation</h4>
                             <p>Abidjan, Côte d'Ivoire</p>
                         </div>
                     </div>
@@ -1200,24 +1200,24 @@
                     <form id="contactForm" class="contact-form" novalidate>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="cName">Nom complet</label>
-                                <input type="text" id="cName" name="name" placeholder="Votre nom" required>
+                                <label for="cName" data-i18n="contact.form.name">Nom complet</label>
+                                <input type="text" id="cName" name="name" data-i18n-placeholder="contact.form.name.ph" placeholder="Votre nom" required>
                             </div>
                             <div class="form-group">
-                                <label for="cEmail">Email</label>
+                                <label for="cEmail" data-i18n="contact.form.email">Email</label>
                                 <input type="email" id="cEmail" name="email" placeholder="votre@email.com" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="cSubject">Sujet</label>
-                            <input type="text" id="cSubject" name="subject" placeholder="Objet de votre message" required>
+                            <label for="cSubject" data-i18n="contact.form.subject">Sujet</label>
+                            <input type="text" id="cSubject" name="subject" data-i18n-placeholder="contact.form.subject.ph" placeholder="Objet de votre message" required>
                         </div>
                         <div class="form-group">
-                            <label for="cMessage">Message</label>
-                            <textarea id="cMessage" name="message" rows="5" placeholder="Décrivez votre projet ou votre demande..." required></textarea>
+                            <label for="cMessage" data-i18n="contact.form.message">Message</label>
+                            <textarea id="cMessage" name="message" rows="5" data-i18n-placeholder="contact.form.message.ph" placeholder="Décrivez votre projet ou votre demande..." required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-full">
-                            Envoyer le message <i class="fas fa-paper-plane"></i>
+                            <span data-i18n="contact.form.submit">Envoyer le message</span> <i class="fas fa-paper-plane"></i>
                         </button>
                         <div id="formMsg" class="form-msg hidden"></div>
                     </form>
@@ -1235,7 +1235,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="#home" class="footer-logo">Abiola<span class="gradient-text">.</span></a>
-                    <p>Full Stack Developer &amp; Automaticien Industriel basé en Côte d'Ivoire.</p>
+                    <p data-i18n="footer.tagline">Full Stack Developer &amp; Automaticien Industriel basé en Côte d'Ivoire.</p>
                     <div class="footer-socials">
                         <a href="https://www.linkedin.com/in/adegbola-abiola-7a5427222/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://github.com/AbiolaAdegbola" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
@@ -1244,41 +1244,46 @@
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4>Navigation</h4>
+                    <h4 data-i18n="footer.nav.title">Navigation</h4>
                     <ul>
-                        <li><a href="#home">Accueil</a></li>
-                        <li><a href="#about">À propos</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#pricing">Tarifs</a></li>
-                        <li><a href="#testimonials">Témoignages</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#home" data-i18n="footer.nav.home">Accueil</a></li>
+                        <li><a href="#about" data-i18n="footer.nav.about">À propos</a></li>
+                        <li><a href="#services" data-i18n="footer.nav.services">Services</a></li>
+                        <li><a href="#portfolio" data-i18n="footer.nav.portfolio">Portfolio</a></li>
+                        <li><a href="#pricing" data-i18n="footer.nav.pricing">Tarifs</a></li>
+                        <li><a href="#testimonials" data-i18n="footer.nav.testimonials">Témoignages</a></li>
+                        <li><a href="#contact" data-i18n="footer.nav.contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Services</h4>
+                    <h4 data-i18n="footer.services.title">Services</h4>
                     <ul>
-                        <li><a href="#services">Développement Web</a></li>
-                        <li><a href="#services">Applications Mobiles</a></li>
-                        <li><a href="#services">Automatisme Industriel</a></li>
+                        <li><a href="#services" data-i18n="footer.services.web">Développement Web</a></li>
+                        <li><a href="#services" data-i18n="footer.services.mobile">Applications Mobiles</a></li>
+                        <li><a href="#services" data-i18n="footer.services.auto">Automatisme Industriel</a></li>
                         <li><a href="#services">UI/UX &amp; SEO</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Coordonnées</h4>
+                    <h4 data-i18n="footer.contact.title">Coordonnées</h4>
                     <ul>
                         <li><i class="fas fa-map-marker-alt"></i> Abidjan, Côte d'Ivoire</li>
                         <li><i class="fas fa-phone"></i> +225 01 41 87 05 79</li>
                         <li><i class="fas fa-envelope"></i> abiole68@gmail.com</li>
                     </ul>
                     <a href="CV ABIOLA.pdf" class="btn btn-ghost btn-sm mt-1" download>
-                        <i class="fas fa-download"></i> Télécharger CV
+                        <i class="fas fa-download"></i> <span data-i18n="footer.cv">Télécharger CV</span>
                     </a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2024 Abiola Adegbola. Tous droits réservés.</p>
-                <p>Conçu avec <i class="fas fa-heart"></i> en Côte d'Ivoire</p>
+                <div class="lang-switcher">
+                  <button class="lang-btn active" data-lang="fr" aria-label="Français">FR</button>
+                  <span class="lang-sep">|</span>
+                  <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+                </div>
+                <p data-i18n="footer.rights">© 2025 Abiola Adegbola. Tous droits réservés.</p>
+                <p data-i18n-html="footer.made">Conçu avec <i class="fas fa-heart"></i> en Côte d'Ivoire</p>
             </div>
         </div>
     </footer>
@@ -1381,8 +1386,8 @@
                 <div class="dv-header-left">
                     <i class="fas fa-file-invoice dv-icon"></i>
                     <div>
-                        <h3 class="dv-title">Demande de devis</h3>
-                        <p class="dv-subtitle">Je vous réponds sous 24h</p>
+                        <h3 class="dv-title" data-i18n="devis.title">Demande de devis</h3>
+                        <p class="dv-subtitle" data-i18n="devis.subtitle">Je vous réponds sous 24h</p>
                     </div>
                 </div>
                 <button class="modal-close" id="dvClose" aria-label="Fermer">
@@ -1401,19 +1406,19 @@
 
                 <div class="dv-grid">
                     <div class="dv-field">
-                        <label for="dvName">Nom et prénom <span class="req">*</span></label>
-                        <input type="text" id="dvName" name="dv_name" placeholder="Ex : Kouassi Jean-Marc" required autocomplete="name">
+                        <label for="dvName"><span data-i18n="devis.name">Nom et prénom</span> <span class="req">*</span></label>
+                        <input type="text" id="dvName" name="dv_name" data-i18n-placeholder="devis.name.ph" placeholder="Ex : Kouassi Jean-Marc" required autocomplete="name">
                     </div>
                     <div class="dv-field">
-                        <label for="dvPhone">Téléphone <span class="req">*</span></label>
+                        <label for="dvPhone"><span data-i18n="devis.phone">Téléphone</span> <span class="req">*</span></label>
                         <input type="tel" id="dvPhone" name="dv_phone" placeholder="Ex : +225 07 00 00 00 00" required autocomplete="tel">
                     </div>
                     <div class="dv-field dv-full">
-                        <label for="dvEmail">Adresse e-mail <span class="req">*</span></label>
+                        <label for="dvEmail"><span data-i18n="devis.email">Adresse e-mail</span> <span class="req">*</span></label>
                         <input type="email" id="dvEmail" name="dv_email" placeholder="votre@email.com" required autocomplete="email">
                     </div>
                     <div class="dv-field">
-                        <label for="dvType">Type de projet <span class="req">*</span></label>
+                        <label for="dvType"><span data-i18n="devis.type">Type de projet</span> <span class="req">*</span></label>
                         <select id="dvType" name="dv_type" required>
                             <option value="" disabled selected>Choisir…</option>
                             <option value="Site vitrine">Site vitrine</option>
@@ -1427,7 +1432,7 @@
                         </select>
                     </div>
                     <div class="dv-field">
-                        <label for="dvSector">Secteur d'activité <span class="req">*</span></label>
+                        <label for="dvSector"><span data-i18n="devis.sector">Secteur d'activité</span> <span class="req">*</span></label>
                         <select id="dvSector" name="dv_sector" required>
                             <option value="" disabled selected>Choisir…</option>
                             <option value="Agriculture / AgroTech">Agriculture / AgroTech</option>
@@ -1445,7 +1450,7 @@
                         </select>
                     </div>
                     <div class="dv-field">
-                        <label for="dvBudget">Budget estimé <span class="req">*</span></label>
+                        <label for="dvBudget"><span data-i18n="devis.budget">Budget estimé</span> <span class="req">*</span></label>
                         <select id="dvBudget" name="dv_budget" required>
                             <option value="" disabled selected>Choisir…</option>
                             <option value="Moins de 100 000 FCFA">Moins de 100 000 FCFA</option>
@@ -1457,7 +1462,7 @@
                         </select>
                     </div>
                     <div class="dv-field">
-                        <label for="dvUrgency">Délai souhaité <span class="req">*</span></label>
+                        <label for="dvUrgency"><span data-i18n="devis.urgency">Délai souhaité</span> <span class="req">*</span></label>
                         <select id="dvUrgency" name="dv_urgency" required>
                             <option value="" disabled selected>Choisir…</option>
                             <option value="Urgent (< 1 mois)">Urgent — moins d'1 mois</option>
@@ -1470,14 +1475,14 @@
                 </div>
 
                 <div class="dv-field dv-full" style="margin-top:4px">
-                    <label for="dvDetails">Description du projet <span style="color:var(--text-muted);font-weight:400">(optionnel)</span></label>
-                    <textarea id="dvDetails" name="dv_details" rows="3" placeholder="Décrivez brièvement votre projet, vos attentes, vos contraintes…"></textarea>
+                    <label for="dvDetails"><span data-i18n="devis.details">Description du projet</span> <span style="color:var(--text-muted);font-weight:400" data-i18n="devis.optional">(optionnel)</span></label>
+                    <textarea id="dvDetails" name="dv_details" rows="3" data-i18n-placeholder="devis.details.ph" placeholder="Décrivez brièvement votre projet, vos attentes, vos contraintes…"></textarea>
                 </div>
 
                 <div class="dv-form-footer">
-                    <p class="dv-privacy"><i class="fas fa-lock"></i> Vos données sont confidentielles et ne seront pas partagées.</p>
+                    <p class="dv-privacy"><i class="fas fa-lock"></i> <span data-i18n="devis.privacy">Vos données sont confidentielles et ne seront pas partagées.</span></p>
                     <button type="submit" class="dv-submit-btn" id="dvSubmitBtn">
-                        <span class="btn-text"><i class="fas fa-paper-plane"></i> Envoyer la demande</span>
+                        <span class="btn-text"><i class="fas fa-paper-plane"></i> <span data-i18n="devis.submit">Envoyer la demande</span></span>
                         <span class="btn-spinner hidden"><i class="fas fa-circle-notch fa-spin"></i></span>
                     </button>
                 </div>

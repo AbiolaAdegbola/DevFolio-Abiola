@@ -2992,3 +2992,48 @@ a.contact-card:hover .cc-arrow { color: var(--blue); transform: translateX(4px);
   .price-val { font-size: 1.4rem; }
   .exp-tab { padding: 8px 12px; font-size: 0.78rem; }
 }
+
+/* ── Language Switcher ── */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.lang-btn {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.5);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all var(--t) var(--ease);
+}
+.lang-btn.active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+.lang-btn:hover:not(.active) {
+  border-color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.8);
+}
+.lang-sep {
+  color: rgba(255,255,255,0.2);
+  font-size: 0.75rem;
+}
+[data-theme="light"] .lang-btn {
+  border-color: rgba(22,55,83,0.2);
+  color: var(--text-muted);
+}
+[data-theme="light"] .lang-btn.active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+[data-theme="light"] .lang-sep {
+  color: rgba(22,55,83,0.3);
+}
