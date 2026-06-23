@@ -608,6 +608,110 @@ window.addEventListener('load', () => {
   });
 })();
 
+/* ── Devis Modal ── */
+(function initDevisModal() {
+  const overlay   = document.getElementById('devisModal');
+  const closeBtn  = document.getElementById('dvClose');
+  const form      = document.getElementById('devisForm');
+  const planName  = document.getElementById('dvPlanName');
+  const planPrice = document.getElementById('dvPlanPrice');
+  const msgEl     = document.getElementById('dvMsg');
+  const submitBtn = document.getElementById('dvSubmitBtn');
+
+  if (!overlay) return;
+
+  function openDevis(plan, price) {
+    planName.textContent  = plan  || '—';
+    planPrice.textContent = price || '';
+    form.reset();
+    msgEl.hidden = true;
+    msgEl.className = 'dv-msg';
+    overlay.hidden  = false;
+    requestAnimationFrame(() => overlay.classList.add('active'));
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDevis() {
+    overlay.classList.remove('active');
+    overlay.addEventListener('transitionend', () => {
+      overlay.hidden = true;
+      document.body.style.overflow = '';
+    }, { once: true });
+  }
+
+  document.querySelectorAll('.open-devis-modal').forEach(btn => {
+    btn.addEventListener('click', () => openDevis(btn.dataset.plan, btn.dataset.price));
+  });
+
+  closeBtn?.addEventListener('click', closeDevis);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeDevis(); });
+  document.addEventListener('keydown', e => {
+    if (!overlay.hidden && e.key === 'Escape') closeDevis();
+  });
+
+  function showMsg(text, type) {
+    msgEl.textContent = text;
+    msgEl.className   = `dv-msg ${type}`;
+    msgEl.hidden      = false;
+  }
+
+  form?.addEventListener('submit', async e => {
+    e.preventDefault();
+
+    const fields = ['dvName','dvPhone','dvEmail','dvType','dvSector','dvBudget','dvUrgency'];
+    let valid = true;
+    fields.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.toggle('error', !el.value.trim());
+      if (!el.value.trim()) valid = false;
+    });
+    if (!valid) { showMsg('Veuillez remplir tous les champs obligatoires.', 'error'); return; }
+
+    const emailEl = document.getElementById('dvEmail');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim())) {
+      emailEl.classList.add('error');
+      showMsg('Adresse e-mail invalide.', 'error');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.querySelector('.btn-text').classList.add('hidden');
+    submitBtn.querySelector('.btn-spinner').classList.remove('hidden');
+    msgEl.hidden = true;
+
+    const params = {
+      dv_plan    : planName.textContent,
+      dv_name    : document.getElementById('dvName').value.trim(),
+      dv_email   : document.getElementById('dvEmail').value.trim(),
+      dv_phone   : document.getElementById('dvPhone').value.trim(),
+      dv_type    : document.getElementById('dvType').value,
+      dv_sector  : document.getElementById('dvSector').value,
+      dv_budget  : document.getElementById('dvBudget').value,
+      dv_urgency : document.getElementById('dvUrgency').value,
+      dv_details : document.getElementById('dvDetails')?.value.trim() || '—',
+    };
+
+    try {
+      if (typeof emailjs === 'undefined') throw new Error('EmailJS non chargé');
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_DEVIS_TEMPLATE_ID, params);
+      showMsg('✓ Votre demande a bien été envoyée ! Je vous réponds sous 24h.', 'success');
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      showMsg('Une erreur est survenue. Contactez-moi directement par email.', 'error');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.querySelector('.btn-text').classList.remove('hidden');
+      submitBtn.querySelector('.btn-spinner').classList.add('hidden');
+    }
+  });
+
+  form?.querySelectorAll('input, select, textarea').forEach(el => {
+    el.addEventListener('input', () => el.classList.remove('error'));
+  });
+})();
+
 /* ── EmailJS Config ──────────────────────────────────────────
    Pour configurer l'envoi d'emails :
    1. Créez un compte gratuit sur https://www.emailjs.com
