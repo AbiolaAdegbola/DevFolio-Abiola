@@ -573,11 +573,13 @@ window.addEventListener('load', () => {
 
   if (!overlay || !openBtn) return;
 
-  const DOC_PATH = 'docs/memoire-master-adegbola-abiola.docx';
+  const DOC_PATH = 'https://drive.google.com/file/d/1em3cghnHhG7IwMSj4kqgiAz4VUoKq4Zl/view?usp=sharing';
+  // const DOC_PATH = 'docs/memoire-master-adegbola-abiola.docx';
 
   function openThesis() {
-    const docUrl  = `${window.location.origin}/${DOC_PATH}`;
-    const viewUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(docUrl)}&embedded=true`;
+    const docUrl  = `https://drive.google.com/file/d/1em3cghnHhG7IwMSj4kqgiAz4VUoKq4Zl/view?usp=sharing`;
+    // const docUrl  = `${window.location.origin}/${DOC_PATH}`;
+    const viewUrl = `https://drive.google.com/file/d/1em3cghnHhG7IwMSj4kqgiAz4VUoKq4Zl/view?usp=sharing`;
 
     frame.src = '';
     loading.hidden  = false;
@@ -723,7 +725,7 @@ window.addEventListener('load', () => {
 const EMAILJS_PUBLIC_KEY = 't6WfXVf-lvCnw7uym';   // Account > API Keys
 const EMAILJS_SERVICE_ID = 'service_o1nnpzp';   // Email Services > Service ID
 const EMAILJS_TEMPLATE_ID = 'template_i40qm9l';  // Email Templates > Template ID
-const EMAILJS_DEVIS_TEMPLATE_ID = 'DEVIS_TEMPLATE_ID'; // À remplacer après création du template devis sur EmailJS
+const EMAILJS_DEVIS_TEMPLATE_ID = 'template_hyiy908'; // À remplacer après création du template devis sur EmailJS
 
 /* ── Contact Form ── */
 (function initContactForm() {
