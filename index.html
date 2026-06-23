@@ -965,9 +965,9 @@
                         <li><i class="fas fa-check"></i> Formulaire de contact</li>
                         <li><i class="fas fa-check"></i> Notifications email</li>
                     </ul>
-                    <a href="https://wa.me/2250141870579" target="_blank" class="btn btn-ghost btn-full">
-                        <i class="fab fa-whatsapp"></i> Demander un devis
-                    </a>
+                    <button type="button" class="btn btn-ghost btn-full open-devis-modal" data-plan="Site Vitrine" data-price="150 000 FCFA">
+                        <i class="fas fa-file-invoice"></i> Demander un devis
+                    </button>
                 </div>
 
                 <div class="pricing-card featured reveal">
@@ -989,9 +989,9 @@
                         <li><i class="fas fa-check"></i> Tableau de bord admin</li>
                         <li><i class="fas fa-check"></i> Support 3 mois</li>
                     </ul>
-                    <a href="https://wa.me/2250141870579" target="_blank" class="btn btn-primary btn-full">
-                        <i class="fab fa-whatsapp"></i> Demander un devis
-                    </a>
+                    <button type="button" class="btn btn-primary btn-full open-devis-modal" data-plan="E-commerce" data-price="480 000 FCFA">
+                        <i class="fas fa-file-invoice"></i> Demander un devis
+                    </button>
                 </div>
 
                 <div class="pricing-card reveal">
@@ -1011,9 +1011,9 @@
                         <li><i class="fas fa-check"></i> Hébergement cloud 1 an</li>
                         <li><i class="fas fa-check"></i> Support 6 mois</li>
                     </ul>
-                    <a href="https://wa.me/2250141870579" target="_blank" class="btn btn-ghost btn-full">
-                        <i class="fab fa-whatsapp"></i> Discutons de votre projet
-                    </a>
+                    <button type="button" class="btn btn-ghost btn-full open-devis-modal" data-plan="Projet Sur Mesure" data-price="890 000+ FCFA">
+                        <i class="fas fa-file-invoice"></i> Discutons de votre projet
+                    </button>
                 </div>
 
             </div>
@@ -1359,6 +1359,122 @@
                     <p>Le document ne peut pas s'afficher dans ce navigateur.</p>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         MODAL — DEMANDE DE DEVIS
+    ══════════════════════════════════════ -->
+    <div id="devisModal" class="modal-overlay devis-modal-overlay" role="dialog" aria-modal="true" aria-label="Demande de devis" hidden>
+        <div class="dv-inner">
+            <div class="dv-header">
+                <div class="dv-header-left">
+                    <i class="fas fa-file-invoice dv-icon"></i>
+                    <div>
+                        <h3 class="dv-title">Demande de devis</h3>
+                        <p class="dv-subtitle">Je vous réponds sous 24h</p>
+                    </div>
+                </div>
+                <button class="modal-close" id="dvClose" aria-label="Fermer">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="dv-plan-bar" id="dvPlanBar">
+                <i class="fas fa-tag"></i>
+                <span>Forfait sélectionné : </span>
+                <strong id="dvPlanName">—</strong>
+                <span class="dv-plan-price" id="dvPlanPrice"></span>
+            </div>
+
+            <form id="devisForm" class="dv-form" novalidate>
+
+                <div class="dv-grid">
+                    <div class="dv-field">
+                        <label for="dvName">Nom et prénom <span class="req">*</span></label>
+                        <input type="text" id="dvName" name="dv_name" placeholder="Ex : Kouassi Jean-Marc" required autocomplete="name">
+                    </div>
+                    <div class="dv-field">
+                        <label for="dvPhone">Téléphone <span class="req">*</span></label>
+                        <input type="tel" id="dvPhone" name="dv_phone" placeholder="Ex : +225 07 00 00 00 00" required autocomplete="tel">
+                    </div>
+                    <div class="dv-field dv-full">
+                        <label for="dvEmail">Adresse e-mail <span class="req">*</span></label>
+                        <input type="email" id="dvEmail" name="dv_email" placeholder="votre@email.com" required autocomplete="email">
+                    </div>
+                    <div class="dv-field">
+                        <label for="dvType">Type de projet <span class="req">*</span></label>
+                        <select id="dvType" name="dv_type" required>
+                            <option value="" disabled selected>Choisir…</option>
+                            <option value="Site vitrine">Site vitrine</option>
+                            <option value="E-commerce">E-commerce / Boutique en ligne</option>
+                            <option value="Application web">Application web</option>
+                            <option value="Application mobile">Application mobile</option>
+                            <option value="ERP / CRM">ERP / CRM</option>
+                            <option value="IoT / Automatisme">IoT / Automatisme industriel</option>
+                            <option value="Dashboard / Data">Dashboard / Data Science</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="dv-field">
+                        <label for="dvSector">Secteur d'activité <span class="req">*</span></label>
+                        <select id="dvSector" name="dv_sector" required>
+                            <option value="" disabled selected>Choisir…</option>
+                            <option value="Agriculture / AgroTech">Agriculture / AgroTech</option>
+                            <option value="Commerce / Retail">Commerce / Retail</option>
+                            <option value="Industrie">Industrie / Manufacture</option>
+                            <option value="Santé">Santé / MedTech</option>
+                            <option value="Éducation">Éducation / EdTech</option>
+                            <option value="Finance / FinTech">Finance / FinTech</option>
+                            <option value="Immobilier">Immobilier</option>
+                            <option value="Logistique / Transport">Logistique / Transport</option>
+                            <option value="Média / Communication">Média / Communication</option>
+                            <option value="Tech / Startup">Tech / Startup</option>
+                            <option value="Administration / ONG">Administration / ONG</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="dv-field">
+                        <label for="dvBudget">Budget estimé <span class="req">*</span></label>
+                        <select id="dvBudget" name="dv_budget" required>
+                            <option value="" disabled selected>Choisir…</option>
+                            <option value="Moins de 100 000 FCFA">Moins de 100 000 FCFA</option>
+                            <option value="100 000 – 300 000 FCFA">100 000 – 300 000 FCFA</option>
+                            <option value="300 000 – 600 000 FCFA">300 000 – 600 000 FCFA</option>
+                            <option value="600 000 – 1 000 000 FCFA">600 000 – 1 000 000 FCFA</option>
+                            <option value="Plus de 1 000 000 FCFA">Plus de 1 000 000 FCFA</option>
+                            <option value="Budget à définir">Budget à définir ensemble</option>
+                        </select>
+                    </div>
+                    <div class="dv-field">
+                        <label for="dvUrgency">Délai souhaité <span class="req">*</span></label>
+                        <select id="dvUrgency" name="dv_urgency" required>
+                            <option value="" disabled selected>Choisir…</option>
+                            <option value="Urgent (< 1 mois)">Urgent — moins d'1 mois</option>
+                            <option value="Court terme (1–3 mois)">Court terme — 1 à 3 mois</option>
+                            <option value="Moyen terme (3–6 mois)">Moyen terme — 3 à 6 mois</option>
+                            <option value="Long terme (> 6 mois)">Long terme — plus de 6 mois</option>
+                            <option value="Pas encore défini">Pas encore défini</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="dv-field dv-full" style="margin-top:4px">
+                    <label for="dvDetails">Description du projet <span style="color:var(--text-muted);font-weight:400">(optionnel)</span></label>
+                    <textarea id="dvDetails" name="dv_details" rows="3" placeholder="Décrivez brièvement votre projet, vos attentes, vos contraintes…"></textarea>
+                </div>
+
+                <div class="dv-form-footer">
+                    <p class="dv-privacy"><i class="fas fa-lock"></i> Vos données sont confidentielles et ne seront pas partagées.</p>
+                    <button type="submit" class="dv-submit-btn" id="dvSubmitBtn">
+                        <span class="btn-text"><i class="fas fa-paper-plane"></i> Envoyer la demande</span>
+                        <span class="btn-spinner hidden"><i class="fas fa-circle-notch fa-spin"></i></span>
+                    </button>
+                </div>
+
+                <div class="dv-msg" id="dvMsg" hidden></div>
+
+            </form>
         </div>
     </div>
 
