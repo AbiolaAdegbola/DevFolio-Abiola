@@ -2680,3 +2680,315 @@ a.contact-card:hover .cc-arrow { color: var(--blue); transform: translateX(4px);
 }
 [data-theme="light"] .dv-field input::placeholder,
 [data-theme="light"] .dv-field textarea::placeholder { color: #9ab0c8; }
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE MOBILE — Améliorations Complètes
+   Breakpoints : ≤768px (tablette), ≤480px (téléphone)
+═══════════════════════════════════════════════════ */
+
+/* ── 768px : tablette / mobile large ── */
+@media (max-width: 768px) {
+
+  /* ── Général ── */
+  .container { padding: 0 16px; }
+  .section { padding: 60px 0; }
+
+  /* ── Navbar ── */
+  .nav-logo { font-size: 1.35rem; }
+  .nav-container { padding: 0 16px; gap: 12px; }
+
+  /* Menu mobile : plein écran slide-in */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    left: unset;
+    width: 100%;
+    height: 100vh;
+    background: rgba(2, 13, 28, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 80px 32px 40px;
+    transition: right var(--t) var(--ease);
+    border-left: none;
+    z-index: 999;
+  }
+  .nav-menu.open { right: 0; }
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .nav-link {
+    font-size: 1.25rem;
+    padding: 14px 18px;
+    min-height: 44px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: var(--r-sm);
+  }
+
+  /* Hamburger : tap target 44px */
+  .hamburger {
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  /* CTA dans le menu mobile */
+  .nav-cta {
+    display: block;
+    margin-top: 24px;
+    padding: 14px 20px;
+    text-align: center;
+    border-radius: var(--r-sm);
+    font-size: 1rem;
+    min-height: 44px;
+  }
+
+  /* ── Hero ── */
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+  .hero-description { margin-inline: auto; max-width: 100%; }
+  .hero-actions { justify-content: center; flex-wrap: wrap; }
+  .hero-socials { justify-content: center; }
+  .hero-visual { order: -1; }
+  .hero-card-wrap { width: 260px; height: 260px; }
+  .hero-avatar-ring { width: 200px; height: 200px; }
+  .ring-1 { width: 225px; height: 225px; }
+  .ring-2 { width: 255px; height: 255px; }
+
+  /* Cacher les badges flottants sur mobile */
+  .tech-badge { display: none; }
+
+  /* Typed text no overflow */
+  .hero-typed { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
+
+  /* ── Stats ── */
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+  /* ── About ── */
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-img-side { display: flex; justify-content: center; }
+  .about-img-wrap { max-width: 100%; width: 100%; }
+  .about-img-wrap img { max-width: 340px; margin: 0 auto; }
+
+  /* ── Services ── */
+  .services-grid { grid-template-columns: 1fr; }
+
+  /* ── Experience tabs : défilement horizontal ── */
+  .exp-tabs {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .exp-tabs::-webkit-scrollbar { display: none; }
+  .exp-tab { white-space: nowrap; flex-shrink: 0; }
+
+  /* Timeline no horizontal overflow */
+  .timeline { overflow: hidden; }
+  .tl-card { padding: 18px 16px; }
+  .tl-head { flex-direction: column; gap: 8px; align-items: flex-start; }
+  .tl-date { align-self: flex-start; }
+
+  /* ── Thesis card ── */
+  .thesis-mention-badge {
+    position: static;
+    display: inline-flex;
+    margin-bottom: 12px;
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+  .thesis-title-block {
+    padding: 12px 14px 12px 36px;
+    margin-bottom: 14px;
+  }
+  .thesis-quote-icon { left: 10px; }
+  .thesis-supervisors {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .thesis-supervisor { min-width: unset; width: 100%; }
+
+  /* ── Skills ── */
+  .skills-categories { grid-template-columns: 1fr; }
+  .skills-grid { flex-wrap: wrap; }
+
+  /* ── Portfolio : filtre défilant horizontalement ── */
+  .portfolio-filter {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    justify-content: flex-start;
+  }
+  .portfolio-filter::-webkit-scrollbar { display: none; }
+  .filter-btn { flex-shrink: 0; white-space: nowrap; }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .p-img { aspect-ratio: 16/9; }
+
+  /* ── Pricing ── */
+  .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  .price-val { font-size: 1.8rem; word-break: break-word; }
+  .pc-price { flex-wrap: wrap; }
+
+  /* ── Videos / Témoignages ── */
+  .videos-grid { grid-template-columns: 1fr; }
+
+  /* ── Contact ── */
+  .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+  .contact-form-wrap { padding: 24px 20px; }
+  .form-row { grid-template-columns: 1fr; }
+
+  /* ── Section headers ── */
+  .section-header { margin-bottom: 40px; }
+  .section-header h2 { font-size: clamp(1.7rem, 6vw, 2.5rem); }
+
+  /* ── Footer ── */
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  /* ── Modal portfolio ── */
+  .pm-inner {
+    grid-template-columns: 1fr;
+    max-height: 92vh;
+    overflow-y: auto;
+  }
+  .pm-gallery { aspect-ratio: 16/10; min-height: unset; }
+  .pm-img-wrap { min-height: 200px; }
+  .pm-info { padding: 22px 20px; max-height: none; }
+
+  /* ── Back to top ── */
+  .back-to-top { bottom: 20px; right: 16px; }
+}
+
+/* ── Light theme : nav menu mobile ── */
+@media (max-width: 768px) {
+  [data-theme="light"] .nav-menu {
+    background: rgba(240, 245, 252, 0.98);
+  }
+}
+
+/* ── 480px : téléphone ── */
+@media (max-width: 480px) {
+
+  /* ── Général ── */
+  .container { padding: 0 14px; }
+
+  /* ── Navbar ── */
+  .nav-logo { font-size: 1.2rem; }
+
+  /* ── Hero ── */
+  .hero { padding: 90px 0 50px; }
+  .hero-name { font-size: 2rem; }
+  .hero-greeting { font-size: 0.95rem; }
+  .hero-description { font-size: 0.95rem; }
+  .hero-badge { font-size: 0.78rem; padding: 6px 12px; }
+  .hero-card-wrap { width: 220px; height: 220px; }
+  .hero-avatar-ring { width: 170px; height: 170px; }
+  .ring-1 { width: 192px; height: 192px; }
+  .ring-2 { width: 217px; height: 217px; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+
+  /* ── Stats ── */
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .stat-card { padding: 14px 12px; gap: 8px; }
+  .stat-num { font-size: 1.4rem; }
+  .stat-icon { width: 38px; height: 38px; font-size: 1rem; }
+
+  /* ── About ── */
+  .about-info { grid-template-columns: 1fr; }
+  .about-actions { flex-wrap: wrap; gap: 12px; }
+  .about-actions .btn { flex: 1 1 auto; justify-content: center; }
+
+  /* ── Services ── */
+  .service-card { padding: 24px 20px; }
+
+  /* ── Experience ── */
+  .exp-tabs { padding: 4px; }
+  .exp-tab { padding: 9px 16px; font-size: 0.82rem; }
+  .tl-item { grid-template-columns: 18px 1fr; gap: 12px; }
+  .tl-card { padding: 14px; }
+  .tl-head h3 { font-size: 0.95rem; }
+
+  /* ── Thesis ── */
+  .thesis-title-block { padding: 10px 12px 10px 32px; }
+  .thesis-title-text { font-size: 0.85rem; }
+  .thesis-actions { flex-direction: column; }
+  .thesis-download-btn,
+  .thesis-read-btn { width: 100%; justify-content: center; }
+
+  /* ── Skills ── */
+  .skill-cat { padding: 20px 16px; }
+  .skill-pill { font-size: 0.8rem; padding: 6px 10px; }
+  .skill-pill img { width: 18px; height: 18px; }
+
+  /* ── Portfolio ── */
+  .filter-btn { padding: 8px 16px; font-size: 0.82rem; }
+  .p-info { padding: 14px 16px; }
+  .p-info h4 { font-size: 0.88rem; }
+
+  /* ── Pricing ── */
+  .pricing-card { padding: 28px 20px; }
+  .price-val { font-size: 1.6rem; }
+
+  /* ── Contact ── */
+  .contact-form-wrap { padding: 20px 16px; }
+  .contact-card { padding: 14px 16px; gap: 12px; }
+
+  /* ── Section headers ── */
+  .section-header h2 { font-size: clamp(1.5rem, 7vw, 2rem); }
+  .section-sub { font-size: 0.9rem; }
+
+  /* ── CTA Banner ── */
+  .cta-banner { padding: 60px 0; }
+  .cta-inner h2 { font-size: 1.6rem; }
+  .cta-inner p { font-size: 0.95rem; }
+  .cta-inner .btn { width: 100%; justify-content: center; }
+
+  /* ── Footer ── */
+  .footer { padding: 50px 0 0; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; padding-bottom: 40px; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
+
+  /* ── Modal portfolio ── */
+  .pm-inner { max-height: 95vh; border-radius: var(--r-md); }
+  .pm-info { padding: 16px; }
+  .pm-info h2 { font-size: 1.1rem; }
+
+  /* ── Devis modal ── */
+  .dv-grid { grid-template-columns: 1fr; }
+  .dv-form { padding: 16px; }
+  .dv-form-footer { flex-direction: column; align-items: flex-start; }
+  .dv-submit-btn { width: 100%; justify-content: center; }
+  .devis-modal-overlay { padding: 10px; }
+  .dv-inner { max-height: calc(100vh - 20px); }
+
+  /* ── Back to top ── */
+  .back-to-top { bottom: 16px; right: 14px; width: 40px; height: 40px; font-size: 0.9rem; }
+}
+
+/* ── 360px : très petits téléphones ── */
+@media (max-width: 360px) {
+  .stats-grid { grid-template-columns: 1fr; }
+  .hero-name { font-size: 1.75rem; }
+  .nav-logo { font-size: 1.1rem; }
+  .container { padding: 0 12px; }
+  .pricing-card { padding: 22px 14px; }
+  .price-val { font-size: 1.4rem; }
+  .exp-tab { padding: 8px 12px; font-size: 0.78rem; }
+}
