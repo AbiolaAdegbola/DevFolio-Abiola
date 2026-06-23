@@ -682,10 +682,13 @@ window.addEventListener('load', () => {
     submitBtn.querySelector('.btn-spinner').classList.remove('hidden');
     msgEl.hidden = true;
 
+    const clientEmail = document.getElementById('dvEmail').value.trim();
     const params = {
+      to_email   : 'abiole68@gmail.com',
+      reply_to   : clientEmail,
       dv_plan    : planName.textContent,
       dv_name    : document.getElementById('dvName').value.trim(),
-      dv_email   : document.getElementById('dvEmail').value.trim(),
+      dv_email   : clientEmail,
       dv_phone   : document.getElementById('dvPhone').value.trim(),
       dv_type    : document.getElementById('dvType').value,
       dv_sector  : document.getElementById('dvSector').value,
@@ -700,8 +703,9 @@ window.addEventListener('load', () => {
       showMsg('✓ Votre demande a bien été envoyée ! Je vous réponds sous 24h.', 'success');
       form.reset();
     } catch (err) {
-      console.error(err);
-      showMsg('Une erreur est survenue. Contactez-moi directement par email.', 'error');
+      console.error('EmailJS devis error:', err);
+      const detail = err?.text || err?.message || JSON.stringify(err);
+      showMsg(`Erreur d'envoi : ${detail}`, 'error');
     } finally {
       submitBtn.disabled = false;
       submitBtn.querySelector('.btn-text').classList.remove('hidden');
@@ -722,21 +726,21 @@ window.addEventListener('load', () => {
         {{from_name}}, {{from_email}}, {{subject}}, {{message}}
    4. Remplacez les 3 valeurs ci-dessous par vos vraies clés
 ──────────────────────────────────────────────────────────── */
-const EMAILJS_PUBLIC_KEY = 't6WfXVf-lvCnw7uym';   // Account > API Keys
-const EMAILJS_SERVICE_ID = 'service_o1nnpzp';   // Email Services > Service ID
-const EMAILJS_TEMPLATE_ID = 'template_i40qm9l';  // Email Templates > Template ID
-const EMAILJS_DEVIS_TEMPLATE_ID = 'template_hyiy908'; // À remplacer après création du template devis sur EmailJS
+const EMAILJS_PUBLIC_KEY      = 't6WfXVf-lvCnw7uym';
+const EMAILJS_SERVICE_ID      = 'service_o1nnpzp';
+const EMAILJS_TEMPLATE_ID     = 'template_i40qm9l';
+const EMAILJS_DEVIS_TEMPLATE_ID = 'template_hyiy908';
+
+/* Initialisation globale — appelée une seule fois dès le chargement */
+if (typeof emailjs !== 'undefined') {
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+}
 
 /* ── Contact Form ── */
 (function initContactForm() {
   const form = document.getElementById('contactForm');
   const msgEl = document.getElementById('formMsg');
   if (!form) return;
-
-  // Init EmailJS once SDK is loaded
-  if (typeof emailjs !== 'undefined') {
-    emailjs.init(EMAILJS_PUBLIC_KEY);
-  }
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
