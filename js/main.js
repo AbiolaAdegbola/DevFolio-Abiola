@@ -60,7 +60,7 @@ const PROJECTS = {
     desc: 'Solution mobile conçue pour accompagner les producteurs dans la gestion quotidienne de leurs exploitations. L’application permet de cartographier les parcelles, planifier les travaux agricoles, suivre les irrigations, enregistrer les dépenses et les récoltes, consulter les prévisions météorologiques et générer des rapports de production afin d’améliorer la prise de décision.',
     tags: ['React Native', 'Expo', 'Node.js', 'MongoDB', 'Google Maps API', 'Weather API'],
     images: ['img/ma parcelle.png', "img/ma parcelle2.png", "img/ma parcelle 3.png", "img/ma parcelle4.png", "img/ma parcelle5.png"],
-    live: null,
+    live: "https://play.google.com/store/apps/details?id=com.abiola_adegbola.ma_parcelle",
     github: null,
   },
   agrimarket: {
@@ -69,7 +69,7 @@ const PROJECTS = {
     desc: 'Application mobile e-commerce dédiée aux produits agricoles ivoiriens. Géolocalisation des vendeurs, paiement via Orange Money et MTN MoMo, système de notation des vendeurs et suivi des commandes en temps réel.',
     tags: ['Flutter', 'Dart', 'Firebase', 'Node.js', 'Google Maps API'],
     images: ['img/portfolio-4.jpg'],
-    live: null,
+    live: "https://play.google.com/store/apps/details?id=com.anonymous.agriplus",
     github: null,
   },
   deadline: {
