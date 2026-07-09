@@ -1946,7 +1946,6 @@ a.contact-card:hover .cc-arrow { color: var(--blue); transform: translateX(4px);
   .about-actions { flex-wrap: wrap; }
   .services-grid { grid-template-columns: 1fr; }
   .portfolio-grid { grid-template-columns: 1fr; }
-  .portfolio-grid .p-item:nth-child(n+4) { display: none; }
   .form-row { grid-template-columns: 1fr; }
   .contact-form-wrap { padding: 24px; }
   .footer-grid { grid-template-columns: 1fr; }
