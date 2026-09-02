@@ -252,6 +252,7 @@ window.addEventListener('load', () => {
 
   new Typed('#typed', {
     strings: [
+      'IT Manager',
       'Ingénieur en Automatisme Industriel',
       'Développeur Full Stack',
       'Développeur Web & Mobile',
@@ -766,7 +767,7 @@ const TRANSLATIONS = {
     'about.title': 'Qui suis-je <span class="gradient-text">?</span>',
     'about.intro': 'Je suis <strong>ADEGBOLA Abiola Mansourou</strong>, Ingénieur Full Stack et Automaticien Industriel passionné par la création de solutions technologiques innovantes.',
     'about.text1': 'Avec plus de 4 ans d\'expérience en développement web et mobile, ainsi qu\'en automatisme industriel (Siemens SIMATIC S7-300), je transforme des idées complexes en produits digitaux performants et intuitifs.',
-    'about.text2': 'Actuellement développeur chez <strong>Green Agro Valley</strong>, je travaille sur des solutions AgriTech innovantes pour moderniser l\'agriculture en Afrique.',
+    'about.text2': 'Actuellement <strong>IT Manager chez Green Agro Valley</strong>, je pilote la stratégie et l\'infrastructure IT de l\'entreprise après deux ans en tant que développeur, sur des solutions AgriTech innovantes pour moderniser l\'agriculture en Afrique.',
     'about.degree': 'Ingénieur en Informatique',
     'services.tag': '// Services',
     'services.title': 'Ce que je <span class="gradient-text">fais</span>',
@@ -885,7 +886,7 @@ const TRANSLATIONS = {
     'about.title': 'Who am <span class="gradient-text">I?</span>',
     'about.intro': 'I am <strong>ADEGBOLA Abiola Mansourou</strong>, Full Stack Engineer and Industrial Automation Engineer passionate about creating innovative technology solutions.',
     'about.text1': 'With over 4 years of experience in web and mobile development, as well as industrial automation (Siemens SIMATIC S7-300), I turn complex ideas into high-performance, intuitive digital products.',
-    'about.text2': 'Currently a developer at <strong>Green Agro Valley</strong>, I work on innovative AgriTech solutions to modernize agriculture in Africa.',
+    'about.text2': 'Currently <strong>IT Manager at Green Agro Valley</strong>, I lead the company\'s IT strategy and infrastructure after two years as a developer, working on innovative AgriTech solutions to modernize agriculture in Africa.',
     'about.degree': 'Computer Science Engineer',
     'services.tag': '// Services',
     'services.title': 'What I <span class="gradient-text">do</span>',
